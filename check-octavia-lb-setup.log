@@ -1,0 +1,2511 @@
+mrhillsman@local:~$ ssh ubuntu@10.145.81.167
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:euQ6ReR2sL6W3gYG3UX8brsYWWlG9Wc4rP233F2e6Vk.
+Please contact your system administrator.
+Add correct host key in /Users/mrhillsman/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/mrhillsman/.ssh/known_hosts:29
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.4.0-122-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@default:~$ ls
+ubuntu@default:~$ vim setup.sh
+ubuntu@default:~$ chmod +x setup.sh
+ubuntu@default:~$ ./setup.sh ^C
+ubuntu@default:~$ sudo ls $HOME
+sudo: unable to resolve host default
+setup.sh
+ubuntu@default:~$ vim /etc/hosts
+ubuntu@default:~$ vim sudo /etc/^C
+ubuntu@default:~$ sudo vim /etc/hosts
+sudo: unable to resolve host default
+ubuntu@default:~$ sudo ls $HOME
+setup.sh
+ubuntu@default:~$ chmod +x setup.sh
+ubuntu@default:~$ ./setup.sh
++ set -e
++ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Hit:2 http://nova.clouds.archive.ubuntu.com/ubuntu xenial InRelease
+Get:3 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/main Sources [121 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [2,116 B]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [65.1 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [2,120 B]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [484 kB]
+Get:9 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [209 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [344 kB]
+Get:12 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [129 kB]
+Get:13 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/main Sources [868 kB]
+Get:14 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,464 B]
+Get:15 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [1,744 B]
+Get:16 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/restricted Sources [4,808 B]
+Get:17 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/universe Sources [7,728 kB]
+Get:18 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/multiverse Sources [179 kB]
+Get:19 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+Get:20 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/universe Translation-en [4,354 kB]
+Get:21 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [144 kB]
+Get:22 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/multiverse Translation-en [106 kB]
+Get:23 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/main Sources [306 kB]
+Get:24 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/restricted Sources [2,524 B]
+Get:25 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/universe Sources [202 kB]
+Get:26 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/multiverse Sources [8,400 B]
+Get:27 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [769 kB]
+Get:28 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [319 kB]
+Get:29 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [624 kB]
+Get:30 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [252 kB]
+Get:31 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [16.4 kB]
+Get:32 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,344 B]
+Get:33 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports/main Sources [3,436 B]
+Get:34 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports/universe Sources [5,820 B]
+Get:35 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [4,844 B]
+Get:36 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [3,220 B]
+Get:37 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,400 B]
+Get:38 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [3,996 B]
+Fetched 25.1 MB in 10s (2,407 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
++ sudo iptables -t mangle -F
++ sudo iptables -t mangle -X
++ sudo iptables -P INPUT ACCEPT
++ sudo iptables -P FORWARD ACCEPT
++ sudo iptables -P OUTPUT ACCEPT
++ sudo apt install -y docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils cgroupfs-mount containerd runc ubuntu-fan
+Suggested packages:
+  mountall aufs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils cgroupfs-mount containerd docker.io runc ubuntu-fan
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 17.5 MB of archives.
+After this operation, 90.5 MB of additional disk space will be used.
+Get:1 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28.6 kB]
+Get:2 http://nova.clouds.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+Get:3 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 runc amd64 1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1 [1,488 kB]
+Get:4 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 containerd amd64 0.2.5-0ubuntu1~16.04.1 [4,041 kB]
+Get:5 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 1.13.1-0ubuntu1~16.04.2 [11.9 MB]
+Get:6 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.2 [35.6 kB]
+Fetched 17.5 MB in 3s (5,241 kB/s)
+Selecting previously unselected package bridge-utils.
+(Reading database ... 54017 files and directories currently installed.)
+Preparing to unpack .../bridge-utils_1.5-9ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.5-9ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+Unpacking cgroupfs-mount (1.2) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../runc_1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1_amd64.deb ...
+Unpacking runc (1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../containerd_0.2.5-0ubuntu1~16.04.1_amd64.deb ...
+Unpacking containerd (0.2.5-0ubuntu1~16.04.1) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../docker.io_1.13.1-0ubuntu1~16.04.2_amd64.deb ...
+Unpacking docker.io (1.13.1-0ubuntu1~16.04.2) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../ubuntu-fan_0.12.8~16.04.2_all.deb ...
+Unpacking ubuntu-fan (0.12.8~16.04.2) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for systemd (229-4ubuntu21.2) ...
+Setting up bridge-utils (1.5-9ubuntu1) ...
+Setting up cgroupfs-mount (1.2) ...
+Setting up runc (1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1) ...
+Setting up containerd (0.2.5-0ubuntu1~16.04.1) ...
+Setting up docker.io (1.13.1-0ubuntu1~16.04.2) ...
+Adding group `docker' (GID 116) ...
+Done.
+Setting up ubuntu-fan (0.12.8~16.04.2) ...
+Processing triggers for systemd (229-4ubuntu21.2) ...
+Processing triggers for ureadahead (0.100.0-19) ...
++ sudo apt install -y python-pip
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  binutils build-essential cpp cpp-5 dpkg-dev fakeroot g++ g++-5 gcc gcc-5 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan2 libatomic1 libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libdpkg-perl
+  libexpat1-dev libfakeroot libfile-fcntllock-perl libgcc-5-dev libgomp1 libisl15 libitm1 liblsan0 libmpc3 libmpx0 libpython-all-dev libpython-dev libpython-stdlib libpython2.7 libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib
+  libquadmath0 libstdc++-5-dev libtsan0 libubsan0 linux-libc-dev make manpages-dev python python-all python-all-dev python-dev python-minimal python-pip-whl python-pkg-resources python-setuptools python-wheel python2.7 python2.7-dev
+  python2.7-minimal
+Suggested packages:
+  binutils-doc cpp-doc gcc-5-locales debian-keyring g++-multilib g++-5-multilib gcc-5-doc libstdc++6-5-dbg gcc-multilib autoconf automake libtool flex bison gdb gcc-doc gcc-5-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg
+  libasan2-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg libcilkrts5-dbg libmpx0-dbg libquadmath0-dbg glibc-doc libstdc++-5-doc make-doc python-doc python-tk python-setuptools-doc python2.7-doc binfmt-support
+The following NEW packages will be installed:
+  binutils build-essential cpp cpp-5 dpkg-dev fakeroot g++ g++-5 gcc gcc-5 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan2 libatomic1 libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libdpkg-perl
+  libexpat1-dev libfakeroot libfile-fcntllock-perl libgcc-5-dev libgomp1 libisl15 libitm1 liblsan0 libmpc3 libmpx0 libpython-all-dev libpython-dev libpython-stdlib libpython2.7 libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib
+  libquadmath0 libstdc++-5-dev libtsan0 libubsan0 linux-libc-dev make manpages-dev python python-all python-all-dev python-dev python-minimal python-pip python-pip-whl python-pkg-resources python-setuptools python-wheel python2.7
+  python2.7-dev python2.7-minimal
+0 upgraded, 57 newly installed, 0 to remove and 0 not upgraded.
+Need to get 73.2 MB of archives.
+After this operation, 209 MB of additional disk space will be used.
+Get:1 http://nova.clouds.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-minimal amd64 2.7.12-1ubuntu0~16.04.3 [340 kB]
+Setting up libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.3) ...
+Setting up python2.7 (2.7.12-1ubuntu0~16.04.3) ...
+Setting up libpython-stdlib:amd64 (2.7.12-1~16.04) ...
+Setting up python (2.7.12-1~16.04) ...
+Setting up libmpc3:amd64 (1.0.3-1) ...
+Setting up binutils (2.26.1-1ubuntu1~16.04.6) ...
+Setting up libc-dev-bin (2.23-0ubuntu10) ...
+Setting up linux-libc-dev:amd64 (4.4.0-122.146) ...
+Setting up libc6-dev:amd64 (2.23-0ubuntu10) ...
+Setting up libisl15:amd64 (0.16.1-1) ...
+Setting up cpp-5 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up cpp (4:5.3.1-1ubuntu1) ...
+Setting up libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libgomp1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libitm1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libatomic1:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libasan2:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up liblsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libtsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libubsan0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libmpx0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up gcc-5 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up gcc (4:5.3.1-1ubuntu1) ...
+Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up g++-5 (5.4.0-6ubuntu1~16.04.9) ...
+Setting up g++ (4:5.3.1-1ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up make (4.1-6) ...
+Setting up libdpkg-perl (1.18.4ubuntu1.4) ...
+Setting up dpkg-dev (1.18.4ubuntu1.4) ...
+Setting up build-essential (12.1ubuntu2) ...
+Setting up libfakeroot:amd64 (1.20.2-1ubuntu1) ...
+Setting up fakeroot (1.20.2-1ubuntu1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up libalgorithm-diff-perl (1.19.03-1) ...
+Setting up libalgorithm-diff-xs-perl (0.04-4build1) ...
+Setting up libalgorithm-merge-perl (0.08-3) ...
+Setting up libexpat1-dev:amd64 (2.1.0-7ubuntu0.16.04.3) ...
+Setting up libfile-fcntllock-perl (0.22-3) ...
+Setting up libpython2.7:amd64 (2.7.12-1ubuntu0~16.04.3) ...
+Setting up libpython2.7-dev:amd64 (2.7.12-1ubuntu0~16.04.3) ...
+Setting up libpython-dev:amd64 (2.7.12-1~16.04) ...
+Setting up libpython-all-dev:amd64 (2.7.12-1~16.04) ...
+Setting up manpages-dev (4.04-2) ...
+Setting up python-all (2.7.12-1~16.04) ...
+Setting up python2.7-dev (2.7.12-1ubuntu0~16.04.3) ...
+Setting up python-dev (2.7.12-1~16.04) ...
+Setting up python-all-dev (2.7.12-1~16.04) ...
+Setting up python-pip-whl (8.1.1-2ubuntu0.4) ...
+Setting up python-pip (8.1.1-2ubuntu0.4) ...
+Setting up python-pkg-resources (20.7.0-1) ...
+Setting up python-setuptools (20.7.0-1) ...
+Setting up python-wheel (0.29.0-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
++ sudo pip install -U python-openstackclient python-octaviaclient python-neutronclient
+The directory '/home/ubuntu/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/ubuntu/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting python-openstackclient
+  Downloading https://files.pythonhosted.org/packages/33/84/c739b13aacc47d887cae58acc7dd921240918aa20a9add6ab64d932d1a6a/python_openstackclient-3.15.0-py2.py3-none-any.whl (823kB)
+    100% |████████████████████████████████| 829kB 1.3MB/s
+Collecting python-octaviaclient
+  Downloading https://files.pythonhosted.org/packages/8f/0b/a7c6ec841ed5f799992578506b4fa5c4a86b141e00bcd1fea9597150e822/python_octaviaclient-1.4.0-py2-none-any.whl (66kB)
+    100% |████████████████████████████████| 71kB 7.9MB/s
+Collecting python-neutronclient
+  Downloading https://files.pythonhosted.org/packages/b8/bc/be63ca8ac670bcf6711e1d14caaef401f2354c28488498e700e08db92ad6/python_neutronclient-6.8.0-py2.py3-none-any.whl (418kB)
+    100% |████████████████████████████████| 419kB 2.4MB/s
+Collecting openstacksdk>=0.11.2 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/fe/d5/d7292ccd2e6c4163f061c8648f805983387587a3e92e1f95a89204a28c06/openstacksdk-0.13.0-py2.py3-none-any.whl (997kB)
+    100% |████████████████████████████████| 1.0MB 1.1MB/s
+Collecting python-novaclient>=9.1.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/95/d3/8bd00df0804a8253215312e89d5757de812b69f3a302e02c8766c2523ab1/python_novaclient-10.2.0-py2.py3-none-any.whl (308kB)
+    100% |████████████████████████████████| 317kB 3.3MB/s
+Collecting pbr!=2.1.0,>=2.0.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/e1/ba/f95e3ec83f93919b1437028e989cf3fa5ff4f5cae4a1f62255f71deddb5b/pbr-4.0.2-py2.py3-none-any.whl (98kB)
+    100% |████████████████████████████████| 102kB 7.1MB/s
+Collecting six>=1.10.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Collecting oslo.i18n>=3.15.3 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/41/19/6bdc09c5548fae467f00120812256c27a253fa29d07020ecf725d3a247cb/oslo.i18n-3.20.0-py2.py3-none-any.whl (42kB)
+    100% |████████████████████████████████| 51kB 10.3MB/s
+Collecting cliff!=2.9.0,>=2.8.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/f6/21/9108b6b00a996254c242ba17c7d959f3fa13d2812adf011a08c2a7b13a41/cliff-2.11.0-py2-none-any.whl (73kB)
+    100% |████████████████████████████████| 81kB 8.0MB/s
+Collecting keystoneauth1>=3.4.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/46/e5/f78bf0af7833ab6e326342de9c3fe62deae07b792f4c6525dd41b7743ee2/keystoneauth1-3.5.0-py2.py3-none-any.whl (282kB)
+    100% |████████████████████████████████| 286kB 3.5MB/s
+Collecting python-keystoneclient>=3.8.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/f5/26/c21d9632e6892dfc23b5315e0221dba8b05b62d15d7488489a4b3953e854/python_keystoneclient-3.16.0-py2.py3-none-any.whl (376kB)
+    100% |████████████████████████████████| 378kB 2.6MB/s
+Collecting Babel!=2.4.0,>=2.3.4 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/94/03/14e68ad12e771a79cf96792f7158d68a7b3d8c7b2badf39e9ef1f65b57d6/Babel-2.5.3-py2.py3-none-any.whl (6.8MB)
+    100% |████████████████████████████████| 6.8MB 165kB/s
+Collecting python-cinderclient>=3.3.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/4a/d8/bb1af0485b4e5b3ebe1253b1396e63861c23c7b5c9b0e0aa0807d105de55/python_cinderclient-3.5.0-py2.py3-none-any.whl (326kB)
+    100% |████████████████████████████████| 327kB 2.7MB/s
+Collecting python-glanceclient>=2.8.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/f8/74/14f925a9d623bf90d6cf7e08248778b4f606b2647418e1f1ebfba9ec933b/python_glanceclient-2.11.0-py2.py3-none-any.whl (179kB)
+    100% |████████████████████████████████| 184kB 4.8MB/s
+Collecting oslo.utils>=3.33.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/af/55/3352c9b93b0fcba4e77c3c16ad55311b5a0dec958f5ac3c1803f1fe15703/oslo.utils-3.36.1-py2.py3-none-any.whl (91kB)
+    100% |████████████████████████████████| 92kB 6.1MB/s
+Collecting osc-lib>=1.8.0 (from python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/de/b7/91ed1a58756390fa006a5777ceb44578f021a9b67ffec0729f5037fff51a/osc_lib-1.10.0-py2-none-any.whl (81kB)
+    100% |████████████████████████████████| 81kB 7.1MB/s
+Collecting os-client-config>=1.28.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/b7/e9/51de66c351be82c72928074de1820f5ed8a673496c45d619f9bb21ec69e9/os_client_config-1.31.1-py2.py3-none-any.whl
+Collecting PrettyTable<0.8,>=0.7.1 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/ef/30/4b0746848746ed5941f052479e7c23d2b56d174b82f4fd34a25e389831f5/prettytable-0.7.2.tar.bz2
+Collecting appdirs>=1.3.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/56/eb/810e700ed1349edde4cbdc1b2a21e28cdf115f9faf263f6bbf8447c1abf3/appdirs-1.4.3-py2.py3-none-any.whl
+Collecting unicodecsv>=0.8.0; python_version < "3.0" (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/6f/a4/691ab63b17505a26096608cc309960b5a6bdf39e4ba1a793d5f9b1a53270/unicodecsv-0.14.1.tar.gz
+Collecting simplejson>=3.5.1 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/6c/ca/8776e0c494b7f16f98a4f40f1540ed6f7467f75280631d837e9cf3e5796e/simplejson-3.14.0.tar.gz (80kB)
+    100% |████████████████████████████████| 81kB 7.0MB/s
+Collecting cmd2>=0.6.7 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/ee/02/faa35704449a68f18db39ee9a047e32c8b569e672daadfef3501259fe6bb/cmd2-0.8.5-py2.py3-none-any.whl (51kB)
+    100% |████████████████████████████████| 61kB 8.9MB/s
+Collecting PyYAML>=3.10 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz (253kB)
+    100% |████████████████████████████████| 256kB 3.6MB/s
+Collecting requests>=2.14.2 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/49/df/50aa1999ab9bde74656c2919d9c0c085fd2b3775fd3eca826012bef76d8c/requests-2.18.4-py2.py3-none-any.whl (88kB)
+    100% |████████████████████████████████| 92kB 7.1MB/s
+Collecting stevedore>=1.20.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/17/6b/3b7d6d08b2ab3e5ef09e01c9f7b3b590ee135f289bb94553419e40922c25/stevedore-1.28.0-py2.py3-none-any.whl
+Collecting pytz>=2013.6 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl (510kB)
+    100% |████████████████████████████████| 512kB 2.0MB/s
+Collecting wrapt>=1.7.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/a0/47/66897906448185fcb77fc3c2b1bc20ed0ecca81a0f2f88eda3fc5a34fc3d/wrapt-1.10.11.tar.gz
+Collecting funcsigs>=1.0.0; python_version == "2.7" or python_version == "2.6" (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/69/cb/f5be453359271714c01b9bd06126eaf2e368f1fddfff30818754b5ac2328/funcsigs-1.0.2-py2.py3-none-any.whl
+Collecting netifaces>=0.10.4 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/70/dd/411bb4cda549136cf9ff5dbd4f33f898fd90b25ac73fd4ea42a3d3e8fd15/netifaces-0.10.7-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting debtcollector>=1.2.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/77/19/d9c7797fd0916a57a76bd65febb2e08871faaa728cda6a21d5889de1c566/debtcollector-1.19.0-py2.py3-none-any.whl
+Collecting iso8601>=0.1.11 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/ef/57/7162609dab394d38bbc7077b7ba0a6f10fb09d8b7701ea56fa1edc0c4345/iso8601-0.1.12-py2.py3-none-any.whl
+Collecting pyparsing>=2.1.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl (56kB)
+    100% |████████████████████████████████| 61kB 7.9MB/s
+Collecting requestsexceptions>=1.2.0 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/01/8c/49ca60ea8c907260da4662582c434bec98716177674e88df3fd340acf06d/requestsexceptions-1.4.0-py2.py3-none-any.whl
+Collecting netaddr>=0.7.18 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/ba/97/ce14451a9fd7bdb5a397abf99b24a1a6bb7a1a440b019bebd2e9a0dbec74/netaddr-0.7.19-py2.py3-none-any.whl (1.6MB)
+    100% |████████████████████████████████| 1.6MB 691kB/s
+Collecting monotonic>=0.6 (from python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/ac/aa/063eca6a416f397bd99552c534c6d11d57f58f2e94c14780f3bbf818c4cf/monotonic-1.5-py2.py3-none-any.whl
+Collecting oslo.serialization!=2.19.1,>=2.18.0 (from python-neutronclient)
+  Downloading https://files.pythonhosted.org/packages/ca/c8/eb2fcb6cc97ac0e652a304855db37a0e433c2a217f9445e58ca67084075b/oslo.serialization-2.25.0-py2.py3-none-any.whl
+Collecting dogpile.cache>=0.6.2 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/65/24/7bd97e9d486c37ac03ef6ae3a590db1a8e02183e5d7ce9071bcca9d86c44/dogpile.cache-0.6.5.tar.gz (320kB)
+    100% |████████████████████████████████| 327kB 3.1MB/s
+Collecting munch>=2.1.0 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/68/f4/260ec98ea840757a0da09e0ed8135333d59b8dfebe9752a365b04857660a/munch-2.3.2.tar.gz
+Collecting jsonpatch!=1.20,>=1.16 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/a0/e6/d50d526ae2218b765ddbdb2dda14d65e19f501ce07410b375bc43ad20b7a/jsonpatch-1.23-py2.py3-none-any.whl
+Collecting jmespath>=0.9.0 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/b7/31/05c8d001f7f87f0f07289a5fc0fc3832e9a57f2dbd4d3b0fee70e0d51365/jmespath-0.9.3-py2.py3-none-any.whl
+Collecting futures>=3.0.0; python_version == "2.7" or python_version == "2.6" (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl
+Collecting deprecation>=1.0 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/d1/98/caa4171c9ad4bb046b18bef84cc6e5d0ae0427baeee920eef53da83fae09/deprecation-2.0.2.tar.gz
+Collecting ipaddress>=1.0.17; python_version < "3.3" (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/fc/d0/7fc3a811e011d4b388be48a0e381db8d990042df54aa4ef4599a31d39853/ipaddress-1.0.22-py2.py3-none-any.whl
+Collecting os-service-types>=1.2.0 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/c7/ec/7ef45820d4fa2964f0fea5b264bbb1594b68e330513a161ddcf0efd963e4/os_service_types-1.2.0-py2-none-any.whl
+Collecting decorator>=3.4.0 (from openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/bc/bb/a24838832ba35baf52f32ab1a49b906b5f82fb7c76b2f6a7e35e140bac30/decorator-4.3.0-py2.py3-none-any.whl
+Collecting oslo.config>=5.2.0 (from python-keystoneclient>=3.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/03/31/80ffdd71158f80535641f835e9c340b3070019328132db265d3b497c5bff/oslo.config-6.2.0-py2.py3-none-any.whl (111kB)
+    100% |████████████████████████████████| 112kB 6.0MB/s
+Collecting warlock<2,>=1.2.0 (from python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/2d/40/9f01a5e1574dab946598793351d59c86f58209d182d229aaa545abb98894/warlock-1.3.0.tar.gz
+Collecting pyOpenSSL>=17.1.0 (from python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/79/db/7c0cfe4aa8341a5fab4638952520d8db6ab85ff84505e12c00ea311c3516/pyOpenSSL-17.5.0-py2.py3-none-any.whl (53kB)
+    100% |████████████████████████████████| 61kB 8.3MB/s
+Collecting pyperclip (from cmd2>=0.6.7->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/5b/06/86e3c6a55cacef0e4ec7c25379ff7fcd1a88fd939ecefd442b535c792fa4/pyperclip-1.6.0.tar.gz
+Collecting contextlib2; python_version < "3.5" (from cmd2>=0.6.7->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/a2/71/8273a7eeed0aff6a854237ab5453bc9aa67deb49df4832801c21f0ff3782/contextlib2-0.5.5-py2.py3-none-any.whl
+Collecting enum34; python_version < "3.4" (from cmd2>=0.6.7->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl
+Collecting wcwidth; sys_platform != "win32" (from cmd2>=0.6.7->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl
+Collecting subprocess32; python_version < "3.0" (from cmd2>=0.6.7->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/b8/2f/49e53b0d0e94611a2dc624a1ad24d41b6d94d0f1b0a078443407ea2214c2/subprocess32-3.2.7.tar.gz (54kB)
+    100% |████████████████████████████████| 61kB 8.4MB/s
+Collecting certifi>=2017.4.17 (from requests>=2.14.2->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/7c/e6/92ad559b7192d846975fc916b65f667c7b8c3a32bea7372340bfe9a15fa5/certifi-2018.4.16-py2.py3-none-any.whl (150kB)
+    100% |████████████████████████████████| 153kB 5.2MB/s
+Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.14.2->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+    100% |████████████████████████████████| 143kB 5.8MB/s
+Collecting idna<2.7,>=2.5 (from requests>=2.14.2->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl (56kB)
+    100% |████████████████████████████████| 61kB 8.2MB/s
+Collecting urllib3<1.23,>=1.21.1 (from requests>=2.14.2->python-octaviaclient)
+  Downloading https://files.pythonhosted.org/packages/63/cb/6965947c13a94236f6d4b8223e21beb4d576dc72e8130bd7880f600839b8/urllib3-1.22-py2.py3-none-any.whl (132kB)
+    100% |████████████████████████████████| 133kB 5.5MB/s
+Collecting msgpack>=0.4.0 (from oslo.serialization!=2.19.1,>=2.18.0->python-neutronclient)
+  Downloading https://files.pythonhosted.org/packages/ff/0d/536fd0b2808dfbc67de46168dc706b5c9f9a1f5a803d96b8bc562a6d96c2/msgpack-0.5.6-cp27-cp27mu-manylinux1_x86_64.whl (295kB)
+    100% |████████████████████████████████| 296kB 3.1MB/s
+Collecting jsonpointer>=1.9 (from jsonpatch!=1.20,>=1.16->openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/18/b0/a80d29577c08eea401659254dfaed87f1af45272899e1812d7e01b679bc5/jsonpointer-2.0-py2.py3-none-any.whl
+Collecting packaging (from deprecation>=1.0->openstacksdk>=0.11.2->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/ad/c2/b500ea05d5f9f361a562f089fc91f77ed3b4783e13a08a3daf82069b1224/packaging-17.1-py2.py3-none-any.whl
+Collecting rfc3986>=0.3.1 (from oslo.config>=5.2.0->python-keystoneclient>=3.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/01/2f/dc440bae2b6a185654b5c298f5cc7b172267db692bc24923130262caedac/rfc3986-1.1.0-py2.py3-none-any.whl
+Collecting jsonschema<3,>=0.7 (from warlock<2,>=1.2.0->python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/77/de/47e35a97b2b05c2fadbec67d44cfcdcd09b8086951b331d82de90d2912da/jsonschema-2.6.0-py2.py3-none-any.whl
+Collecting cryptography>=2.1.4 (from pyOpenSSL>=17.1.0->python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/dd/c2/3a5bfefb25690725824ade71e6b65449f0a9f4b29702cce10560f786ebf6/cryptography-2.2.2-cp27-cp27mu-manylinux1_x86_64.whl (2.2MB)
+    100% |████████████████████████████████| 2.2MB 524kB/s
+Collecting functools32; python_version == "2.7" (from jsonschema<3,>=0.7->warlock<2,>=1.2.0->python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/c5/60/6ac26ad05857c601308d8fb9e87fa36d0ebf889423f47c3502ef034365db/functools32-3.2.3-2.tar.gz
+Collecting cffi>=1.7; platform_python_implementation != "PyPy" (from cryptography>=2.1.4->pyOpenSSL>=17.1.0->python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/14/dd/3e7a1e1280e7d767bd3fa15791759c91ec19058ebe31217fe66f3e9a8c49/cffi-1.11.5-cp27-cp27mu-manylinux1_x86_64.whl (407kB)
+    100% |████████████████████████████████| 409kB 2.4MB/s
+Collecting asn1crypto>=0.21.0 (from cryptography>=2.1.4->pyOpenSSL>=17.1.0->python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl (101kB)
+    100% |████████████████████████████████| 102kB 6.9MB/s
+Collecting pycparser (from cffi>=1.7; platform_python_implementation != "PyPy"->cryptography>=2.1.4->pyOpenSSL>=17.1.0->python-glanceclient>=2.8.0->python-openstackclient)
+  Downloading https://files.pythonhosted.org/packages/8c/2d/aad7f16146f4197a11f8e91fb81df177adcc2073d36a17b1491fd09df6ed/pycparser-2.18.tar.gz (245kB)
+    100% |████████████████████████████████| 256kB 3.8MB/s
+Installing collected packages: dogpile.cache, six, munch, PyYAML, appdirs, iso8601, pbr, jsonpointer, jsonpatch, netifaces, jmespath, futures, stevedore, certifi, chardet, idna, urllib3, requests, keystoneauth1, pyparsing, packaging, deprecation, requestsexceptions, ipaddress, os-service-types, decorator, openstacksdk, PrettyTable, pytz, funcsigs, wrapt, debtcollector, Babel, oslo.i18n, netaddr, monotonic, oslo.utils, msgpack, oslo.serialization, simplejson, python-novaclient, pyperclip, contextlib2, enum34, wcwidth, subprocess32, cmd2, unicodecsv, cliff, rfc3986, oslo.config, python-keystoneclient, python-cinderclient, functools32, jsonschema, warlock, pycparser, cffi, asn1crypto, cryptography, pyOpenSSL, python-glanceclient, os-client-config, osc-lib, python-openstackclient, python-neutronclient, python-octaviaclient
+  Running setup.py install for dogpile.cache ... done
+  Running setup.py install for munch ... done
+  Running setup.py install for PyYAML ... done
+  Running setup.py install for deprecation ... done
+  Running setup.py install for PrettyTable ... done
+  Running setup.py install for wrapt ... done
+  Running setup.py install for simplejson ... done
+  Running setup.py install for pyperclip ... done
+  Running setup.py install for subprocess32 ... done
+  Running setup.py install for unicodecsv ... done
+  Running setup.py install for functools32 ... done
+  Running setup.py install for warlock ... done
+  Running setup.py install for pycparser ... done
+Successfully installed Babel-2.5.3 PrettyTable-0.7.2 PyYAML-3.12 appdirs-1.4.3 asn1crypto-0.24.0 certifi-2018.4.16 cffi-1.11.5 chardet-3.0.4 cliff-2.11.0 cmd2-0.8.5 contextlib2-0.5.5 cryptography-2.2.2 debtcollector-1.19.0 decorator-4.3.0 deprecation-2.0.2 dogpile.cache-0.6.5 enum34-1.1.6 funcsigs-1.0.2 functools32-3.2.3.post2 futures-3.2.0 idna-2.6 ipaddress-1.0.22 iso8601-0.1.12 jmespath-0.9.3 jsonpatch-1.23 jsonpointer-2.0 jsonschema-2.6.0 keystoneauth1-3.5.0 monotonic-1.5 msgpack-0.5.6 munch-2.3.2 netaddr-0.7.19 netifaces-0.10.7 openstacksdk-0.13.0 os-client-config-1.31.1 os-service-types-1.2.0 osc-lib-1.10.0 oslo.config-6.2.0 oslo.i18n-3.20.0 oslo.serialization-2.25.0 oslo.utils-3.36.1 packaging-17.1 pbr-4.0.2 pyOpenSSL-17.5.0 pycparser-2.18 pyparsing-2.2.0 pyperclip-1.6.0 python-cinderclient-3.5.0 python-glanceclient-2.11.0 python-keystoneclient-3.16.0 python-neutronclient-6.8.0 python-novaclient-10.2.0 python-octaviaclient-1.4.0 python-openstackclient-3.15.0 pytz-2018.4 requests-2.18.4 requestsexceptions-1.4.0 rfc3986-1.1.0 simplejson-3.14.0 six-1.11.0 stevedore-1.28.0 subprocess32-3.2.7 unicodecsv-0.14.1 urllib3-1.22 warlock-1.3.0 wcwidth-0.1.7 wrapt-1.10.11
+You are using pip version 8.1.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
++ wget https://github.com/coreos/etcd/releases/download/v3.3.0/etcd-v3.3.0-linux-amd64.tar.gz
+--2018-05-08 14:26:49--  https://github.com/coreos/etcd/releases/download/v3.3.0/etcd-v3.3.0-linux-amd64.tar.gz
+Resolving github.com (github.com)... 192.30.255.113, 192.30.255.112
+Connecting to github.com (github.com)|192.30.255.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github-production-release-asset-2e65be.s3.amazonaws.com/11225014/6c5bb0d0-0757-11e8-8364-52aed8dd48ab?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20180508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20180508T142649Z&X-Amz-Expires=300&X-Amz-Signature=cff06241124ce873510b7d3fa9036d968908bd4567fde197fec1f5c9626b223c&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Detcd-v3.3.0-linux-amd64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2018-05-08 14:26:49--  https://github-production-release-asset-2e65be.s3.amazonaws.com/11225014/6c5bb0d0-0757-11e8-8364-52aed8dd48ab?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20180508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20180508T142649Z&X-Amz-Expires=300&X-Amz-Signature=cff06241124ce873510b7d3fa9036d968908bd4567fde197fec1f5c9626b223c&X-Amz-SignedHeaders=host&actor_id=0&response-content-disposition=attachment%3B%20filename%3Detcd-v3.3.0-linux-amd64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)... 52.216.164.123
+Connecting to github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)|52.216.164.123|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11268992 (11M) [application/octet-stream]
+Saving to: ‘etcd-v3.3.0-linux-amd64.tar.gz’
+
+etcd-v3.3.0-linux-amd64.tar.gz                              100%[=========================================================================================================================================>]  10.75M  5.75MB/s    in 1.9s
+
+2018-05-08 14:26:52 (5.75 MB/s) - ‘etcd-v3.3.0-linux-amd64.tar.gz’ saved [11268992/11268992]
+
++ tar x -f etcd-v3.3.0-linux-amd64.tar.gz
++ sudo cp etcd-v3.3.0-linux-amd64/etcd etcd-v3.3.0-linux-amd64/etcdctl /usr/local/bin/
++ export K8S_OS_PROVIDER_SRC_DIR=/home/ubuntu/src/k8s.io/cloud-provider-openstack
++ K8S_OS_PROVIDER_SRC_DIR=/home/ubuntu/src/k8s.io/cloud-provider-openstack
++ export K8S_SRC_DIR=/home/ubuntu/src/k8s.io/kubernetes
++ K8S_SRC_DIR=/home/ubuntu/src/k8s.io/kubernetes
++ export K8S_LOG_DIR=/home/ubuntu/workspace/logs/kubernetes
++ K8S_LOG_DIR=/home/ubuntu/workspace/logs/kubernetes
++ export KUBECTL=/home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh
++ KUBECTL=/home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh
++ git clone https://github.com/kubernetes/kubernetes /home/ubuntu/src/k8s.io/kubernetes -b master
+Cloning into '/home/ubuntu/src/k8s.io/kubernetes'...
+remote: Counting objects: 758648, done.
+remote: Compressing objects: 100% (150/150), done.
+remote: Total 758648 (delta 87), reused 61 (delta 61), pack-reused 758437
+Receiving objects: 100% (758648/758648), 544.95 MiB | 10.88 MiB/s, done.
+Resolving deltas: 100% (517023/517023), done.
+Checking connectivity... done.
++ make -C /home/ubuntu/src/k8s.io/kubernetes 'WHAT=cmd/kubectl cmd/hyperkube'
+make: Entering directory '/home/ubuntu/src/k8s.io/kubernetes'
+make[1]: Entering directory '/home/ubuntu/src/k8s.io/kubernetes'
++++ [0508 14:28:22] Building go targets for linux/amd64:
+    ./vendor/k8s.io/code-generator/cmd/deepcopy-gen
++++ [0508 14:28:29] Building go targets for linux/amd64:
+    ./vendor/k8s.io/code-generator/cmd/defaulter-gen
++++ [0508 14:28:35] Building go targets for linux/amd64:
+    ./vendor/k8s.io/code-generator/cmd/conversion-gen
++++ [0508 14:28:41] Building go targets for linux/amd64:
+    ./vendor/k8s.io/code-generator/cmd/openapi-gen
++++ [0508 14:28:48] Building go targets for linux/amd64:
+    ./vendor/github.com/jteeuwen/go-bindata/go-bindata
+make[1]: Leaving directory '/home/ubuntu/src/k8s.io/kubernetes'
++++ [0508 14:28:50] Building go targets for linux/amd64:
+    cmd/kubectl
+    cmd/hyperkube
+make: Leaving directory '/home/ubuntu/src/k8s.io/kubernetes'
++ export OS_AUTH_TYPE=password
++ OS_AUTH_TYPE=password
++ export OS_IDENTITY_API_VERSION=3
++ OS_IDENTITY_API_VERSION=3
++ export OS_VOLUME_API_VERSION=2
++ OS_VOLUME_API_VERSION=2
++ export OS_INTERFACE=public
++ OS_INTERFACE=public
++ export OS_AUTH_URL=http://10.145.81.106:5000/v3
++ OS_AUTH_URL=http://10.145.81.106:5000/v3
++ export OS_PROJECT_ID=3434ba15b6b44896a4f57dcff4b12588
++ OS_PROJECT_ID=3434ba15b6b44896a4f57dcff4b12588
++ export OS_PROJECT_NAME=cpopenstack
++ OS_PROJECT_NAME=cpopenstack
++ export OS_USER_DOMAIN_NAME=Default
++ OS_USER_DOMAIN_NAME=Default
++ export OS_PROJECT_DOMAIN_ID=default
++ OS_PROJECT_DOMAIN_ID=default
++ export OS_USERNAME=cpopenstack
++ OS_USERNAME=cpopenstack
++ export OS_PASSWORD=cpopenstack
++ OS_PASSWORD=cpopenstack
++ export OS_REGION_NAME=RegionOne
++ OS_REGION_NAME=RegionOne
++ export OS_DOMAIN_NAME=default
++ OS_DOMAIN_NAME=default
++ git clone https://github.com/kubernetes/cloud-provider-openstack /home/ubuntu/src/k8s.io/cloud-provider-openstack -b master
+Cloning into '/home/ubuntu/src/k8s.io/cloud-provider-openstack'...
+remote: Counting objects: 6385, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6385 (delta 0), reused 1 (delta 0), pack-reused 6383
+Receiving objects: 100% (6385/6385), 1.52 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (2577/2577), done.
+Checking connectivity... done.
++ cd /home/ubuntu/src/k8s.io/cloud-provider-openstack
++ make build
+echo "create gobin"
+create gobin
+mkdir -p /home/ubuntu/bin
+pip install Mercurial
+Collecting Mercurial
+  Downloading https://files.pythonhosted.org/packages/27/f1/a83c40781455ffaf04fc9a000c2ddbae21407d4675667563b17d9706e0ea/mercurial-4.6.tar.gz (6.2MB)
+    100% |████████████████████████████████| 6.2MB 180kB/s
+Building wheels for collected packages: Mercurial
+  Running setup.py bdist_wheel for Mercurial ... done
+  Stored in directory: /home/ubuntu/.cache/pip/wheels/b3/7c/84/affb84d1cec93f06c3ce45856de309b67c56597689655302f8
+Successfully built Mercurial
+Installing collected packages: Mercurial
+Successfully installed Mercurial
+You are using pip version 8.1.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  4564  100  4564    0     0  14424      0 --:--:-- --:--:-- --:--:-- 14397
+ARCH = amd64
+OS = linux
+Will install into /home/ubuntu/bin
+Fetching https://github.com/golang/dep/releases/latest..
+Release Tag = v0.4.1
+Fetching https://github.com/golang/dep/releases/tag/v0.4.1..
+Fetching https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64..
+Setting executable permissions.
+Moving executable to /home/ubuntu/bin/dep
+dep ensure
+CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o openstack-cloud-controller-manager \
+	cmd/openstack-cloud-controller-manager/main.go
+CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o cinder-provisioner \
+	cmd/cinder-provisioner/main.go
+CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o cinder-flex-volume-driver \
+	cmd/cinder-flex-volume-driver/main.go
+CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o cinder-csi-plugin \
+	cmd/cinder-csi-plugin/main.go
+CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o k8s-keystone-auth \
+	cmd/k8s-keystone-auth/main.go
+cd /home/ubuntu/src/k8s.io/cloud-provider-openstack && CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o client-keystone-auth \
+	cmd/client-keystone-auth/main.go
+cd /home/ubuntu/src/k8s.io/cloud-provider-openstack && CGO_ENABLED=0 GOOS=linux go build \
+	-ldflags '"-w -s -X 'main.version=7875fa65'"' \
+	-o octavia-ingress-controller \
+	cmd/octavia-ingress-controller/main.go
++ sudo mkdir -p /etc/kubernetes/
++ cat
+++ openstack network list --external -f value -c ID
+++ head -n 1
+++ openstack network list --internal -f value -c Subnets
+++ head -n 1
++ sudo mv /home/ubuntu/cloud-config /etc/kubernetes/cloud-config
+++ ip route get 1.1.1.1
+++ awk '{print $7}'
++ export API_HOST_IP=192.168.5.23
++ API_HOST_IP=192.168.5.23
++ export KUBELET_HOST=0.0.0.0
++ KUBELET_HOST=0.0.0.0
++ export ALLOW_SECURITY_CONTEXT=true
++ ALLOW_SECURITY_CONTEXT=true
++ export ENABLE_CRI=false
++ ENABLE_CRI=false
++ export ENABLE_HOSTPATH_PROVISIONER=true
++ ENABLE_HOSTPATH_PROVISIONER=true
++ export ENABLE_SINGLE_CA_SIGNER=true
++ ENABLE_SINGLE_CA_SIGNER=true
++ export KUBE_ENABLE_CLUSTER_DNS=false
++ KUBE_ENABLE_CLUSTER_DNS=false
++ export LOG_LEVEL=4
++ LOG_LEVEL=4
++ export CLOUD_PROVIDER=openstack
++ CLOUD_PROVIDER=openstack
++ export EXTERNAL_CLOUD_PROVIDER=true
++ EXTERNAL_CLOUD_PROVIDER=true
++ export CLOUD_CONFIG=/etc/kubernetes/cloud-config
++ CLOUD_CONFIG=/etc/kubernetes/cloud-config
++ export EXTERNAL_CLOUD_PROVIDER_BINARY=/home/ubuntu/src/k8s.io/cloud-provider-openstack/openstack-cloud-controller-manager
++ EXTERNAL_CLOUD_PROVIDER_BINARY=/home/ubuntu/src/k8s.io/cloud-provider-openstack/openstack-cloud-controller-manager
++ sudo mkdir -p /home/ubuntu/workspace/logs/kubernetes
++ export LOG_DIR=/home/ubuntu/workspace/logs/kubernetes
++ LOG_DIR=/home/ubuntu/workspace/logs/kubernetes
++ export ALLOW_PRIVILEGED=true
++ ALLOW_PRIVILEGED=true
++ export ENABLE_DAEMON=true
++ ENABLE_DAEMON=true
+++ curl http://169.254.169.254/openstack/latest/meta_data.json
+++ python -c 'import sys, json; print json.load(sys.stdin)['\''name'\'']'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1784  100  1784    0     0   2722      0 --:--:-- --:--:-- --:--:--  2719
++ export HOSTNAME_OVERRIDE=default
++ HOSTNAME_OVERRIDE=default
++ export MAX_TIME_FOR_URL_API_SERVER=5
++ MAX_TIME_FOR_URL_API_SERVER=5
++ pushd /home/ubuntu/src/k8s.io/kubernetes
+~/src/k8s.io/kubernetes ~/src/k8s.io/cloud-provider-openstack
++ sudo -E PATH=/usr/local/go/bin:/home/ubuntu/bin:/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin SHELLOPTS=braceexpand:errexit:hashall:interactive-comments:xtrace ./hack/local-up-cluster.sh -O
+++ dirname ./hack/local-up-cluster.sh
++ KUBE_ROOT=./hack/..
++ DOCKER_OPTS=
++ DOCKER=(docker ${DOCKER_OPTS})
++ DOCKERIZE_KUBELET=
++ DOCKER_ROOT=
++ ALLOW_PRIVILEGED=true
++ DENY_SECURITY_CONTEXT_ADMISSION=
++ PSP_ADMISSION=
++ NODE_ADMISSION=
++ RUNTIME_CONFIG=
++ KUBELET_AUTHORIZATION_WEBHOOK=
++ KUBELET_AUTHENTICATION_WEBHOOK=
++ POD_MANIFEST_PATH=/var/run/kubernetes/static-pods
++ KUBELET_FLAGS=
++ KUBELET_IMAGE=
++ FAIL_SWAP_ON=false
++ NET_PLUGIN=
++ CNI_CONF_DIR=
++ CNI_BIN_DIR=
++ SERVICE_CLUSTER_IP_RANGE=10.0.0.0/24
++ FIRST_SERVICE_CLUSTER_IP=10.0.0.1
++ CGROUPS_PER_QOS=true
++ CGROUP_DRIVER=
++ USER=root
++ EVICTION_HARD='memory.available<100Mi,nodefs.available<10%,nodefs.inodesFree<5%'
++ EVICTION_SOFT=
++ EVICTION_PRESSURE_TRANSITION_PERIOD=1m
++ KUBE_PROXY_MODE=
++ ENABLE_CLUSTER_DNS=false
++ DNS_SERVER_IP=10.0.0.10
++ DNS_DOMAIN=cluster.local
++ KUBECTL=/home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh
++ WAIT_FOR_URL_API_SERVER=60
++ MAX_TIME_FOR_URL_API_SERVER=5
++ ENABLE_DAEMON=true
++ HOSTNAME_OVERRIDE=default
++ EXTERNAL_CLOUD_PROVIDER=true
++ EXTERNAL_CLOUD_PROVIDER_BINARY=/home/ubuntu/src/k8s.io/cloud-provider-openstack/openstack-cloud-controller-manager
++ CLOUD_PROVIDER=openstack
++ CLOUD_CONFIG=/etc/kubernetes/cloud-config
++ FEATURE_GATES=AllAlpha=false
++ STORAGE_BACKEND=etcd3
++ PRESERVE_ETCD=false
++ ENABLE_SWAGGER_UI=false
++ ENABLE_POD_PRIORITY_PREEMPTION=
++ ENABLE_CLUSTER_DASHBOARD=false
++ ENABLE_APISERVER_BASIC_AUDIT=false
++ AUTHORIZATION_MODE=Node,RBAC
++ KUBECONFIG_TOKEN=
++ AUTH_ARGS=
++ DEFAULT_STORAGE_CLASS=true
++ KUBE_CACHE_MUTATION_DETECTOR=false
++ export KUBE_CACHE_MUTATION_DETECTOR
++ KUBE_PANIC_WATCH_DECODE_ERROR=true
++ export KUBE_PANIC_WATCH_DECODE_ERROR
++ ENABLE_ADMISSION_PLUGINS=
++ DISABLE_ADMISSION_PLUGINS=
++ ADMISSION_CONTROL_CONFIG_FILE=
++ START_MODE=all
++ KUBE_CONTROLLERS='*'
++ '[' openstack == openstack ']'
++ '[' /etc/kubernetes/cloud-config == '' ']'
++ '[' '!' -f /etc/kubernetes/cloud-config ']'
++ '[' '' == ipvs ']'
++ '[' '' == true ']'
++ '[' false == false ']'
++ echo 'WARNING : The kubelet is configured to not fail even if swap is enabled; production deployments should disable swap.'
+WARNING : The kubelet is configured to not fail even if swap is enabled; production deployments should disable swap.
+++ id -u
++ '[' 0 '!=' 0 ']'
++ set -e
++ source ./hack/../hack/lib/init.sh
+++ set -o errexit
+++ set -o nounset
+++ set -o pipefail
+++ unset CDPATH
+++++ dirname ./hack/../hack/lib/init.sh
++++ cd ./hack/../hack/lib/../..
++++ pwd -P
+++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes
+++ KUBE_OUTPUT_SUBPATH=_output/local
+++ KUBE_OUTPUT=/home/ubuntu/src/k8s.io/kubernetes/_output/local
+++ KUBE_OUTPUT_BINPATH=/home/ubuntu/src/k8s.io/kubernetes/_output/local/bin
+++ KUBE_RSYNC_COMPRESS=0
+++ export no_proxy=127.0.0.1,localhost
+++ no_proxy=127.0.0.1,localhost
+++ THIS_PLATFORM_BIN=/home/ubuntu/src/k8s.io/kubernetes/_output/bin
+++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/util.sh
++++ [[ -z '' ]]
++++ declare -r 'color_start=\033['
++++ declare -r 'color_red=\033[0;31m'
++++ declare -r 'color_yellow=\033[0;33m'
++++ declare -r 'color_green=\033[0;32m'
++++ declare -r 'color_norm=\033[0m'
+++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/logging.sh
++++ KUBE_VERBOSE=5
+++ kube::log::install_errexit
+++ trap kube::log::errexit ERR
+++ set -o errtrace
+++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/version.sh
+++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/golang.sh
++++ readonly KUBE_GO_PACKAGE=k8s.io/kubernetes
++++ KUBE_GO_PACKAGE=k8s.io/kubernetes
++++ readonly KUBE_GOPATH=/home/ubuntu/src/k8s.io/kubernetes/_output/local/go
++++ KUBE_GOPATH=/home/ubuntu/src/k8s.io/kubernetes/_output/local/go
++++ IFS=' '
++++ read -ra KUBE_SERVER_TARGETS
+++++ kube::golang::server_targets
+++++ targets=(cmd/kube-proxy cmd/kube-apiserver cmd/kube-controller-manager cmd/cloud-controller-manager cmd/kubelet cmd/kubeadm cmd/hyperkube cmd/kube-scheduler vendor/k8s.io/kube-aggregator vendor/k8s.io/apiextensions-apiserver cluster/gce/gci/mounter)
+++++ local targets
+++++ echo cmd/kube-proxy cmd/kube-apiserver cmd/kube-controller-manager cmd/cloud-controller-manager cmd/kubelet cmd/kubeadm cmd/hyperkube cmd/kube-scheduler vendor/k8s.io/kube-aggregator vendor/k8s.io/apiextensions-apiserver cluster/gce/gci/mounter
++++ readonly KUBE_SERVER_TARGETS
++++ KUBE_SERVER_BINARIES=("${KUBE_SERVER_TARGETS[@]##*/}")
++++ readonly KUBE_SERVER_BINARIES
++++ IFS=' '
++++ read -ra KUBE_NODE_TARGETS
+++++ kube::golang::node_targets
+++++ targets=(cmd/kube-proxy cmd/kubeadm cmd/kubelet)
+++++ local targets
+++++ echo cmd/kube-proxy cmd/kubeadm cmd/kubelet
++++ readonly KUBE_NODE_TARGETS
++++ KUBE_NODE_BINARIES=("${KUBE_NODE_TARGETS[@]##*/}")
++++ readonly KUBE_NODE_BINARIES
++++ KUBE_NODE_BINARIES_WIN=("${KUBE_NODE_BINARIES[@]/%/.exe}")
++++ readonly KUBE_NODE_BINARIES_WIN
++++ [[ -n '' ]]
++++ [[ '' == \t\r\u\e ]]
++++ KUBE_SERVER_PLATFORMS=(linux/amd64 linux/arm linux/arm64 linux/s390x linux/ppc64le)
++++ readonly KUBE_SERVER_PLATFORMS
++++ KUBE_NODE_PLATFORMS=(linux/amd64 linux/arm linux/arm64 linux/s390x linux/ppc64le windows/amd64)
++++ readonly KUBE_NODE_PLATFORMS
++++ KUBE_CLIENT_PLATFORMS=(linux/amd64 linux/386 linux/arm linux/arm64 linux/s390x linux/ppc64le darwin/amd64 darwin/386 windows/amd64 windows/386)
++++ readonly KUBE_CLIENT_PLATFORMS
++++ KUBE_TEST_PLATFORMS=(linux/amd64 linux/arm linux/arm64 linux/s390x linux/ppc64le darwin/amd64 windows/amd64)
++++ readonly KUBE_TEST_PLATFORMS
++++ KUBE_CLIENT_TARGETS=(cmd/kubectl)
++++ readonly KUBE_CLIENT_TARGETS
++++ KUBE_CLIENT_BINARIES=("${KUBE_CLIENT_TARGETS[@]##*/}")
++++ readonly KUBE_CLIENT_BINARIES
++++ KUBE_CLIENT_BINARIES_WIN=("${KUBE_CLIENT_BINARIES[@]/%/.exe}")
++++ readonly KUBE_CLIENT_BINARIES_WIN
++++ IFS=' '
++++ read -ra KUBE_TEST_TARGETS
+++++ kube::golang::test_targets
+++++ targets=(cmd/gendocs cmd/genkubedocs cmd/genman cmd/genyaml cmd/genswaggertypedocs cmd/linkcheck vendor/github.com/onsi/ginkgo/ginkgo test/e2e/e2e.test)
+++++ local targets
+++++ echo cmd/gendocs cmd/genkubedocs cmd/genman cmd/genyaml cmd/genswaggertypedocs cmd/linkcheck vendor/github.com/onsi/ginkgo/ginkgo test/e2e/e2e.test
++++ readonly KUBE_TEST_TARGETS
++++ KUBE_TEST_BINARIES=("${KUBE_TEST_TARGETS[@]##*/}")
++++ readonly KUBE_TEST_BINARIES
++++ KUBE_TEST_BINARIES_WIN=("${KUBE_TEST_BINARIES[@]/%/.exe}")
++++ readonly KUBE_TEST_BINARIES_WIN
++++ KUBE_TEST_PORTABLE=(test/e2e/testing-manifests test/kubemark hack/e2e.go hack/e2e-internal hack/get-build.sh hack/ginkgo-e2e.sh hack/lib)
++++ readonly KUBE_TEST_PORTABLE
++++ IFS=' '
++++ read -ra KUBE_TEST_SERVER_TARGETS
+++++ kube::golang::server_test_targets
+++++ targets=(cmd/kubemark vendor/github.com/onsi/ginkgo/ginkgo)
+++++ local targets
+++++ [[ linux-gnu == \l\i\n\u\x* ]]
+++++ targets+=(test/e2e_node/e2e_node.test)
+++++ echo cmd/kubemark vendor/github.com/onsi/ginkgo/ginkgo test/e2e_node/e2e_node.test
++++ readonly KUBE_TEST_SERVER_TARGETS
++++ KUBE_TEST_SERVER_BINARIES=("${KUBE_TEST_SERVER_TARGETS[@]##*/}")
++++ readonly KUBE_TEST_SERVER_BINARIES
++++ KUBE_TEST_SERVER_PLATFORMS=("${KUBE_SERVER_PLATFORMS[@]}")
++++ readonly KUBE_TEST_SERVER_PLATFORMS
++++ readonly KUBE_PARALLEL_BUILD_MEMORY=40
++++ KUBE_PARALLEL_BUILD_MEMORY=40
++++ KUBE_ALL_TARGETS=("${KUBE_SERVER_TARGETS[@]}" "${KUBE_CLIENT_TARGETS[@]}" "${KUBE_TEST_TARGETS[@]}" "${KUBE_TEST_SERVER_TARGETS[@]}")
++++ readonly KUBE_ALL_TARGETS
++++ KUBE_ALL_BINARIES=("${KUBE_ALL_TARGETS[@]##*/}")
++++ readonly KUBE_ALL_BINARIES
++++ KUBE_STATIC_LIBRARIES=(cloud-controller-manager kube-apiserver kube-controller-manager kube-scheduler kube-proxy kube-aggregator kubeadm kubectl)
++++ readonly KUBE_STATIC_LIBRARIES
+++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/etcd.sh
++++ ETCD_VERSION=3.2.18
++++ ETCD_HOST=127.0.0.1
++++ ETCD_PORT=2379
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ KUBE_OUTPUT_HOSTBIN=/home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64
+++ KUBE_AVAILABLE_GROUP_VERSIONS='v1 admissionregistration.k8s.io/v1alpha1 admissionregistration.k8s.io/v1beta1 admission.k8s.io/v1beta1 apps/v1beta1 apps/v1beta2 apps/v1 authentication.k8s.io/v1 authentication.k8s.io/v1beta1 authorization.k8s.io/v1 authorization.k8s.io/v1beta1 autoscaling/v1 autoscaling/v2beta1 batch/v1 batch/v1beta1 batch/v2alpha1 certificates.k8s.io/v1beta1 extensions/v1beta1 events.k8s.io/v1beta1 imagepolicy.k8s.io/v1alpha1 networking.k8s.io/v1 policy/v1beta1 rbac.authorization.k8s.io/v1 rbac.authorization.k8s.io/v1beta1 rbac.authorization.k8s.io/v1alpha1 scheduling.k8s.io/v1alpha1 settings.k8s.io/v1alpha1 storage.k8s.io/v1beta1 storage.k8s.io/v1 storage.k8s.io/v1alpha1 '
+++ KUBE_NONSERVER_GROUP_VERSIONS='
+ abac.authorization.kubernetes.io/v0  abac.authorization.kubernetes.io/v1beta1  componentconfig/v1alpha1  imagepolicy.k8s.io/v1alpha1 admission.k8s.io/v1beta1'
++ GO_OUT=
++ getopts ho:O OPTION
++ case $OPTION in
+++ guess_built_binary_path
++++ kube::util::find-binary hyperkube
+++++ kube::util::host_platform
+++++ local host_os
+++++ local host_arch
+++++ case "$(uname -s)" in
++++++ uname -s
+++++ host_os=linux
+++++ case "$(uname -m)" in
++++++ uname -m
+++++ host_arch=amd64
+++++ echo linux/amd64
++++ kube::util::find-binary-for-platform hyperkube linux/amd64
++++ local -r lookfor=hyperkube
++++ local -r platform=linux/amd64
++++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
++++ local locations
++++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
+++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/hyperkube'
+++++ true
+++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/hyperkube /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/hyperkube /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/hyperkube
+++++ head -1
+++++ true
++++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube
++++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube
+++ local hyperkube_path=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube
+++ [[ -z /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube ]]
++++ dirname /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin
++ GO_OUT=/home/ubuntu/src/k8s.io/kubernetes/_output/bin
++ '[' /home/ubuntu/src/k8s.io/kubernetes/_output/bin == '' ']'
++ getopts ho:O OPTION
++ '[' x/home/ubuntu/src/k8s.io/kubernetes/_output/bin == x ']'
++ echo 'skipped the build.'
+skipped the build.
++ set +e
++ API_PORT=8080
++ API_SECURE_PORT=6443
++ API_HOST=localhost
++ API_HOST_IP=192.168.5.23
++ ADVERTISE_ADDRESS=
++ API_BIND_ADDR=0.0.0.0
++ EXTERNAL_HOSTNAME=localhost
++ KUBELET_HOST=0.0.0.0
++ API_CORS_ALLOWED_ORIGINS='/127.0.0.1(:[0-9]+)?$,/localhost(:[0-9]+)?$'
++ KUBELET_PORT=10250
++ LOG_LEVEL=4
++ LOG_SPEC=
++ LOG_DIR=/home/ubuntu/workspace/logs/kubernetes
++ CONTAINER_RUNTIME=docker
++ CONTAINER_RUNTIME_ENDPOINT=
++ IMAGE_SERVICE_ENDPOINT=
++ CHAOS_CHANCE=0.0
++ CPU_CFS_QUOTA=true
++ ENABLE_HOSTPATH_PROVISIONER=true
++ CLAIM_BINDER_SYNC_PERIOD=15s
++ ENABLE_CONTROLLER_ATTACH_DETACH=true
++ KEEP_TERMINATED_POD_VOLUMES=true
++ CERT_DIR=/var/run/kubernetes
++ ROOT_CA_FILE=/var/run/kubernetes/server-ca.crt
++ ROOT_CA_KEY=/var/run/kubernetes/server-ca.key
++ CLUSTER_SIGNING_CERT_FILE=/var/run/kubernetes/server-ca.crt
++ CLUSTER_SIGNING_KEY_FILE=/var/run/kubernetes/server-ca.key
++ [[ docker == \d\o\c\k\e\r ]]
++ [[ -z '' ]]
+++ docker info
+++ cut -f3- '-d '
+++ grep 'Cgroup Driver:'
+WARNING: No swap limit support
++ CGROUP_DRIVER=cgroupfs
++ echo 'Kubelet cgroup driver defaulted to use: cgroupfs'
+Kubelet cgroup driver defaulted to use: cgroupfs
++ mkdir -p /var/run/kubernetes
+++ test -w /var/run/kubernetes
++ CONTROLPLANE_SUDO=
++ [[ '' == \t\r\u\e ]]
++ [[ all != \k\u\b\e\l\e\t\o\n\l\y ]]
++ kube::etcd::validate
++ command -v etcd
++ local port_check_command
++ command -v ss
++ ss -Version
++ grep iproute2
++ port_check_command=ss
++ ss -nat
++ grep LISTEN
++ grep '[\.:]2379'
+++ etcd --version
+++ tail -n +1
+++ cut -d ' ' -f 3
+++ head -n 1
++ version=3.3.0
+++ kube::etcd::version 3.2.18
+++ printf '%s\n' 3.2.18
+++ awk -F . '{ printf("%d%03d%03d\n", $1, $2, $3) }'
+++ kube::etcd::version 3.3.0
+++ printf '%s\n' 3.3.0
+++ awk -F . '{ printf("%d%03d%03d\n", $1, $2, $3) }'
++ [[ 3002018 -gt 3003000 ]]
++ '[' docker == docker ']'
++ kube::util::ensure_docker_daemon_connectivity
++ DOCKER=(docker ${DOCKER_OPTS})
++ docker info
++ [[ all != \k\u\b\e\l\e\t\o\n\l\y ]]
++ test_apiserver_off
++ [[ 8080 -gt 0 ]]
++ curl --silent -g localhost:8080
+++ kube::log::errexit
+++ local err=7
+++ set +o
+++ grep -qe '-o errexit'
+++ return
++ '[' '!' 7 -eq 0 ']'
++ echo 'API SERVER insecure port is free, proceeding...'
+API SERVER insecure port is free, proceeding...
++ curl --silent -k -g localhost:6443
+++ kube::log::errexit
+++ local err=7
+++ set +o
+++ grep -qe '-o errexit'
+++ return
++ '[' '!' 7 -eq 0 ']'
++ echo 'API SERVER secure port is free, proceeding...'
+API SERVER secure port is free, proceeding...
++ kube::util::test_openssl_installed
++ openssl version
++ '[' 0 '!=' 0 ']'
+++ command -v openssl
++ OPENSSL_BIN=/usr/bin/openssl
++ kube::util::ensure-cfssl
++ command -v cfssl
++ local cfssldir=
++ [[ -z '' ]]
++ kube::util::ensure-temp-dir
++ [[ -z '' ]]
+++ mktemp -d
++ KUBE_TEMP=/tmp/tmp.WSXyA4BhUe
++ kube::util::trap_add kube::util::cleanup-temp-dir EXIT
++ local trap_add_cmd
++ trap_add_cmd=kube::util::cleanup-temp-dir
++ shift
++ for trap_add_name in '"$@"'
++ local existing_cmd
++ local new_cmd
+++ trap -p EXIT
+++ awk '-F'\''' '{print $2}'
++ existing_cmd=
++ [[ -z '' ]]
++ new_cmd=kube::util::cleanup-temp-dir
++ trap kube::util::cleanup-temp-dir EXIT
++ cfssldir=/tmp/tmp.WSXyA4BhUe/cfssl
++ mkdir -p /tmp/tmp.WSXyA4BhUe/cfssl
++ pushd /tmp/tmp.WSXyA4BhUe/cfssl
++ echo 'Unable to successfully run '\''cfssl'\'' from /usr/local/go/bin:/home/ubuntu/bin:/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; downloading instead...'
+Unable to successfully run 'cfssl' from /usr/local/go/bin:/home/ubuntu/bin:/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin; downloading instead...
+++ uname -s
++ kernel=Linux
++ case "${kernel}" in
++ curl --retry 10 -L -o cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9.8M  100  9.8M    0     0  1244k      0  0:00:08  0:00:08 --:--:-- 1552k
++ curl --retry 10 -L -o cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2224k  100 2224k    0     0  3688k      0 --:--:-- --:--:-- --:--:-- 3682k
++ chmod +x cfssl
++ chmod +x cfssljson
++ CFSSL_BIN=/tmp/tmp.WSXyA4BhUe/cfssl/cfssl
++ CFSSLJSON_BIN=/tmp/tmp.WSXyA4BhUe/cfssl/cfssljson
++ [[ ! -x /tmp/tmp.WSXyA4BhUe/cfssl/cfssl ]]
++ [[ ! -x /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson ]]
++ popd
++ '[' /home/ubuntu/src/k8s.io/kubernetes/_output/bin == '' ']'
++ echo 'Detected host and ready to start services.  Doing some housekeeping first...'
+Detected host and ready to start services.  Doing some housekeeping first...
++ echo 'Using GO_OUT /home/ubuntu/src/k8s.io/kubernetes/_output/bin'
+Using GO_OUT /home/ubuntu/src/k8s.io/kubernetes/_output/bin
++ KUBELET_CIDFILE=/tmp/kubelet.cid
++ [[ true = false ]]
++ echo 'Starting services now!'
+Starting services now!
++ [[ all != \k\u\b\e\l\e\t\o\n\l\y ]]
++ start_etcd
++ echo 'Starting etcd'
+Starting etcd
++ kube::etcd::start
++ kube::etcd::validate
++ command -v etcd
++ local port_check_command
++ command -v ss
++ ss -Version
++ grep iproute2
++ port_check_command=ss
++ ss -nat
++ grep LISTEN
++ grep '[\.:]2379'
+++ etcd --version
+++ tail -n +1
+++ cut -d ' ' -f 3
+++ head -n 1
++ version=3.3.0
+++ kube::etcd::version 3.2.18
+++ printf '%s\n' 3.2.18
+++ awk -F . '{ printf("%d%03d%03d\n", $1, $2, $3) }'
+++ kube::etcd::version 3.3.0
+++ printf '%s\n' 3.3.0
+++ awk -F . '{ printf("%d%03d%03d\n", $1, $2, $3) }'
++ [[ 3002018 -gt 3003000 ]]
+++ mktemp -d
++ ETCD_DIR=/tmp/tmp.ndrfpntZsC
++ [[ -d '' ]]
++ ETCD_LOGFILE=/dev/null
++ kube::log::info 'etcd --advertise-client-urls http://127.0.0.1:2379 --data-dir /tmp/tmp.ndrfpntZsC --listen-client-urls http://127.0.0.1:2379 --debug > "/dev/null" 2>/dev/null'
++ local V=0
++ [[ 5 < 0 ]]
++ for message in '"$@"'
++ echo 'etcd --advertise-client-urls http://127.0.0.1:2379 --data-dir /tmp/tmp.ndrfpntZsC --listen-client-urls http://127.0.0.1:2379 --debug > "/dev/null" 2>/dev/null'
+etcd --advertise-client-urls http://127.0.0.1:2379 --data-dir /tmp/tmp.ndrfpntZsC --listen-client-urls http://127.0.0.1:2379 --debug > "/dev/null" 2>/dev/null
++ ETCD_PID=32434
++ echo 'Waiting for etcd to come up.'
+Waiting for etcd to come up.
++ kube::util::wait_for_url http://127.0.0.1:2379/v2/machines 'etcd: ' 0.25 80
++ etcd --advertise-client-urls http://127.0.0.1:2379 --data-dir /tmp/tmp.ndrfpntZsC --listen-client-urls http://127.0.0.1:2379 --debug
++ local url=http://127.0.0.1:2379/v2/machines
++ local 'prefix=etcd: '
++ local wait=0.25
++ local times=80
++ local maxtime=1
++ which curl
++ local i
+++ seq 1 80
++ for i in '$(seq 1 "$times")'
++ local out
+++ curl --max-time 1 -gkfs http://127.0.0.1:2379/v2/machines
++ out=http://127.0.0.1:2379
++ kube::log::status 'On try 1, etcd: : http://127.0.0.1:2379'
++ local V=0
++ [[ 5 < 0 ]]
+++ date '+[%m%d %H:%M:%S]'
++ timestamp='[0508 14:36:07]'
++ echo '+++ [0508 14:36:07] On try 1, etcd: : http://127.0.0.1:2379'
++++ [0508 14:36:07] On try 1, etcd: : http://127.0.0.1:2379
++ shift
++ return 0
++ curl -fs -X PUT http://127.0.0.1:2379/v2/keys/_test
+{"action":"set","node":{"key":"/_test","value":"","modifiedIndex":4,"createdIndex":4}}
++ set_service_accounts
++ SERVICE_ACCOUNT_LOOKUP=true
++ SERVICE_ACCOUNT_KEY=/tmp/kube-serviceaccount.key
++ [[ ! -f /tmp/kube-serviceaccount.key ]]
+++ dirname /tmp/kube-serviceaccount.key
++ mkdir -p /tmp
++ openssl genrsa -out /tmp/kube-serviceaccount.key 2048
++ start_apiserver
++ security_admission=
++ [[ -n '' ]]
++ [[ -n '' ]]
++ [[ -n '' ]]
++ '[' '' == true ']'
++ ENABLE_ADMISSION_PLUGINS=Initializers,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,StorageObjectInUseProtection
++ audit_arg=
++ APISERVER_BASIC_AUDIT_LOG=
++ [[ false = true ]]
++ swagger_arg=
++ [[ false = true ]]
++ authorizer_arg=
++ [[ -n Node,RBAC ]]
++ authorizer_arg='--authorization-mode=Node,RBAC '
++ priv_arg=
++ [[ -n true ]]
++ priv_arg='--allow-privileged '
++ [[ Initializers,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,StorageObjectInUseProtection == *\I\n\i\t\i\a\l\i\z\e\r\s* ]]
++ [[ -n '' ]]
++ RUNTIME_CONFIG+=admissionregistration.k8s.io/v1alpha1
++ runtime_config=
++ [[ -n admissionregistration.k8s.io/v1alpha1 ]]
++ runtime_config=--runtime-config=admissionregistration.k8s.io/v1alpha1
++ advertise_address=
++ [[ 192.168.5.23 != \1\2\7\.\0\.\0\.\1 ]]
++ advertise_address=--advertise-address=192.168.5.23
++ [[ '' != '' ]]
++ [[ true = true ]]
++ kube::util::create_signing_certkey '' /var/run/kubernetes server '"client auth","server auth"'
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local id=server
++ local 'purpose="client auth","server auth"'
++ /usr/bin/env bash -e
++ rm -f /var/run/kubernetes/server-ca.crt /var/run/kubernetes/server-ca.key
++ /usr/bin/openssl req -x509 -sha256 -new -nodes -days 365 -newkey rsa:2048 -keyout /var/run/kubernetes/server-ca.key -out /var/run/kubernetes/server-ca.crt -subj /C=xx/ST=x/L=x/O=x/OU=x/CN=ca/emailAddress=x/
+Generating a 2048 bit RSA private key
+..+++
+................................+++
+writing new private key to '/var/run/kubernetes/server-ca.key'
+-----
++ echo '{"signing":{"default":{"expiry":"43800h","usages":["signing","key encipherment","client auth","server auth"]}}}'
++ sudo cp /var/run/kubernetes/server-ca.key /var/run/kubernetes/client-ca.key
++ sudo cp /var/run/kubernetes/server-ca.crt /var/run/kubernetes/client-ca.crt
++ sudo cp /var/run/kubernetes/server-ca-config.json /var/run/kubernetes/client-ca-config.json
++ kube::util::create_signing_certkey '' /var/run/kubernetes request-header '"client auth"'
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local id=request-header
++ local 'purpose="client auth"'
++ /usr/bin/env bash -e
++ rm -f /var/run/kubernetes/request-header-ca.crt /var/run/kubernetes/request-header-ca.key
++ /usr/bin/openssl req -x509 -sha256 -new -nodes -days 365 -newkey rsa:2048 -keyout /var/run/kubernetes/request-header-ca.key -out /var/run/kubernetes/request-header-ca.crt -subj /C=xx/ST=x/L=x/O=x/OU=x/CN=ca/emailAddress=x/
+Generating a 2048 bit RSA private key
+........................................................+++
+........+++
+writing new private key to '/var/run/kubernetes/request-header-ca.key'
+-----
++ echo '{"signing":{"default":{"expiry":"43800h","usages":["signing","key encipherment","client auth"]}}}'
++ kube::util::create_serving_certkey '' /var/run/kubernetes server-ca kube-apiserver kubernetes.default kubernetes.default.svc localhost 192.168.5.23 localhost 10.0.0.1
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=server-ca
++ local id=kube-apiserver
++ local cn=kubernetes.default
++ local hosts=
++ local SEP=
++ shift 5
++ '[' -n kubernetes.default.svc ']'
++ hosts+='"kubernetes.default.svc"'
++ SEP=,
++ shift 1
++ '[' -n localhost ']'
++ hosts+=',"localhost"'
++ SEP=,
++ shift 1
++ '[' -n 192.168.5.23 ']'
++ hosts+=',"192.168.5.23"'
++ SEP=,
++ shift 1
++ '[' -n localhost ']'
++ hosts+=',"localhost"'
++ SEP=,
++ shift 1
++ '[' -n 10.0.0.1 ']'
++ hosts+=',"10.0.0.1"'
++ SEP=,
++ shift 1
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"kubernetes.default","hosts":["kubernetes.default.svc","localhost","192.168.5.23","localhost","10.0.0.1"],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=server-ca.crt -ca-key=server-ca.key -config=server-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare serving-kube-apiserver
+2018/05/08 14:36:07 [INFO] generate received request
+2018/05/08 14:36:07 [INFO] received CSR
+2018/05/08 14:36:07 [INFO] generating key: rsa-2048
+2018/05/08 14:36:08 [INFO] encoded CSR
+2018/05/08 14:36:08 [INFO] signed certificate with serial number 265336414470387491583412198073054347952644595226
+2018/05/08 14:36:08 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv serving-kube-apiserver-key.pem serving-kube-apiserver.key
++ mv serving-kube-apiserver.pem serving-kube-apiserver.crt
++ rm -f serving-kube-apiserver.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes client-ca kubelet system:node:default system:nodes
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=client-ca
++ local id=kubelet
++ local cn=system:node:default
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n system:nodes ']'
++ groups+='{"O":"system:nodes"}'
++ SEP=,
++ shift 1
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:node:default","names":[{"O":"system:nodes"}],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=client-ca.crt -ca-key=client-ca.key -config=client-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-kubelet
+2018/05/08 14:36:08 [INFO] generate received request
+2018/05/08 14:36:08 [INFO] received CSR
+2018/05/08 14:36:08 [INFO] generating key: rsa-2048
+2018/05/08 14:36:08 [INFO] encoded CSR
+2018/05/08 14:36:08 [INFO] signed certificate with serial number 629031243122792790557491110205340923315745682605
+2018/05/08 14:36:08 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-kubelet-key.pem client-kubelet.key
++ mv client-kubelet.pem client-kubelet.crt
++ rm -f client-kubelet.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes client-ca kube-proxy system:kube-proxy system:nodes
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=client-ca
++ local id=kube-proxy
++ local cn=system:kube-proxy
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n system:nodes ']'
++ groups+='{"O":"system:nodes"}'
++ SEP=,
++ shift 1
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:kube-proxy","names":[{"O":"system:nodes"}],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=client-ca.crt -ca-key=client-ca.key -config=client-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-kube-proxy
+2018/05/08 14:36:08 [INFO] generate received request
+2018/05/08 14:36:08 [INFO] received CSR
+2018/05/08 14:36:08 [INFO] generating key: rsa-2048
+2018/05/08 14:36:08 [INFO] encoded CSR
+2018/05/08 14:36:08 [INFO] signed certificate with serial number 653774800935910510143824168650636165288190588589
+2018/05/08 14:36:08 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-kube-proxy-key.pem client-kube-proxy.key
++ mv client-kube-proxy.pem client-kube-proxy.crt
++ rm -f client-kube-proxy.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes client-ca controller system:kube-controller-manager
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=client-ca
++ local id=controller
++ local cn=system:kube-controller-manager
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:kube-controller-manager","names":[],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=client-ca.crt -ca-key=client-ca.key -config=client-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-controller
+2018/05/08 14:36:08 [INFO] generate received request
+2018/05/08 14:36:08 [INFO] received CSR
+2018/05/08 14:36:08 [INFO] generating key: rsa-2048
+2018/05/08 14:36:09 [INFO] encoded CSR
+2018/05/08 14:36:09 [INFO] signed certificate with serial number 422470921071935874892423535340315332014255350870
+2018/05/08 14:36:09 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-controller-key.pem client-controller.key
++ mv client-controller.pem client-controller.crt
++ rm -f client-controller.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes client-ca scheduler system:kube-scheduler
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=client-ca
++ local id=scheduler
++ local cn=system:kube-scheduler
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:kube-scheduler","names":[],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=client-ca.crt -ca-key=client-ca.key -config=client-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-scheduler
+2018/05/08 14:36:09 [INFO] generate received request
+2018/05/08 14:36:09 [INFO] received CSR
+2018/05/08 14:36:09 [INFO] generating key: rsa-2048
+2018/05/08 14:36:09 [INFO] encoded CSR
+2018/05/08 14:36:09 [INFO] signed certificate with serial number 124623422637860181588202249063193206789395344845
+2018/05/08 14:36:09 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-scheduler-key.pem client-scheduler.key
++ mv client-scheduler.pem client-scheduler.crt
++ rm -f client-scheduler.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes client-ca admin system:admin system:masters
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=client-ca
++ local id=admin
++ local cn=system:admin
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n system:masters ']'
++ groups+='{"O":"system:masters"}'
++ SEP=,
++ shift 1
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:admin","names":[{"O":"system:masters"}],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=client-ca.crt -ca-key=client-ca.key -config=client-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-admin
+2018/05/08 14:36:09 [INFO] generate received request
+2018/05/08 14:36:09 [INFO] received CSR
+2018/05/08 14:36:09 [INFO] generating key: rsa-2048
+2018/05/08 14:36:09 [INFO] encoded CSR
+2018/05/08 14:36:09 [INFO] signed certificate with serial number 244080599008246687301356908862067261912348793092
+2018/05/08 14:36:09 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-admin-key.pem client-admin.key
++ mv client-admin.pem client-admin.crt
++ rm -f client-admin.csr
++ kube::util::create_serving_certkey '' /var/run/kubernetes server-ca kube-aggregator api.kube-public.svc localhost 192.168.5.23
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=server-ca
++ local id=kube-aggregator
++ local cn=api.kube-public.svc
++ local hosts=
++ local SEP=
++ shift 5
++ '[' -n localhost ']'
++ hosts+='"localhost"'
++ SEP=,
++ shift 1
++ '[' -n 192.168.5.23 ']'
++ hosts+=',"192.168.5.23"'
++ SEP=,
++ shift 1
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"api.kube-public.svc","hosts":["localhost","192.168.5.23"],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=server-ca.crt -ca-key=server-ca.key -config=server-ca-config.json -
+2018/05/08 14:36:09 [INFO] generate received request
+2018/05/08 14:36:09 [INFO] received CSR
+2018/05/08 14:36:09 [INFO] generating key: rsa-2048
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare serving-kube-aggregator
+2018/05/08 14:36:09 [INFO] encoded CSR
+2018/05/08 14:36:09 [INFO] signed certificate with serial number 696324094865910726391214559875830851723027025793
+2018/05/08 14:36:09 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv serving-kube-aggregator-key.pem serving-kube-aggregator.key
++ mv serving-kube-aggregator.pem serving-kube-aggregator.crt
++ rm -f serving-kube-aggregator.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes request-header-ca auth-proxy system:auth-proxy
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=request-header-ca
++ local id=auth-proxy
++ local cn=system:auth-proxy
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:auth-proxy","names":[],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=request-header-ca.crt -ca-key=request-header-ca.key -config=request-header-ca-config.json -
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-auth-proxy
+2018/05/08 14:36:09 [INFO] generate received request
+2018/05/08 14:36:09 [INFO] received CSR
+2018/05/08 14:36:09 [INFO] generating key: rsa-2048
+2018/05/08 14:36:10 [INFO] encoded CSR
+2018/05/08 14:36:10 [INFO] signed certificate with serial number 451505147694119651053226076076213672914212121303
+2018/05/08 14:36:10 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-auth-proxy-key.pem client-auth-proxy.key
++ mv client-auth-proxy.pem client-auth-proxy.crt
++ rm -f client-auth-proxy.csr
++ kube::util::create_client_certkey '' /var/run/kubernetes client-ca kube-aggregator system:kube-aggregator system:masters
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca=client-ca
++ local id=kube-aggregator
++ local cn=system:kube-aggregator
++ local groups=
++ local SEP=
++ shift 5
++ '[' -n system:masters ']'
++ groups+='{"O":"system:masters"}'
++ SEP=,
++ shift 1
++ '[' -n '' ']'
++ /usr/bin/env bash -e
++ cd /var/run/kubernetes
++ echo '{"CN":"system:kube-aggregator","names":[{"O":"system:masters"}],"hosts":[""],"key":{"algo":"rsa","size":2048}}'
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssl gencert -ca=client-ca.crt -ca-key=client-ca.key -config=client-ca-config.json -
+2018/05/08 14:36:10 [INFO] generate received request
+2018/05/08 14:36:10 [INFO] received CSR
+2018/05/08 14:36:10 [INFO] generating key: rsa-2048
++ /tmp/tmp.WSXyA4BhUe/cfssl/cfssljson -bare client-kube-aggregator
+2018/05/08 14:36:10 [INFO] encoded CSR
+2018/05/08 14:36:10 [INFO] signed certificate with serial number 129250223826495475204565487678898260877502065099
+2018/05/08 14:36:10 [WARNING] This certificate lacks a "hosts" field. This makes it unsuitable for
+websites. For more information see the Baseline Requirements for the Issuance and Management
+of Publicly-Trusted Certificates, v.1.1.6, from the CA/Browser Forum (https://cabforum.org);
+specifically, section 10.2.3 ("Information Requirements").
++ mv client-kube-aggregator-key.pem client-kube-aggregator.key
++ mv client-kube-aggregator.pem client-kube-aggregator.crt
++ rm -f client-kube-aggregator.csr
++ kube::util::write_client_kubeconfig '' /var/run/kubernetes /var/run/kubernetes/server-ca.crt localhost 6443 kube-aggregator
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca_file=/var/run/kubernetes/server-ca.crt
++ local api_host=localhost
++ local api_port=6443
++ local client_id=kube-aggregator
++ local token=
++ cat
++ tee /var/run/kubernetes/kube-aggregator.kubeconfig
+++ whoami
++ username=root
++ /usr/bin/env bash -e
+++ kube::util::find-binary kubectl
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ kube::util::find-binary-for-platform kubectl linux/amd64
+++ local -r lookfor=kubectl
+++ local -r platform=linux/amd64
+++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
+++ local locations
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/kube-aggregator.kubeconfig config view --minify --flatten
++ mv -f /tmp/kube-aggregator.kubeconfig /var/run/kubernetes/kube-aggregator.kubeconfig
++ chown root /var/run/kubernetes/kube-aggregator.kubeconfig
++ cloud_config_arg='--cloud-provider=openstack --cloud-config=/etc/kubernetes/cloud-config'
++ [[ true == \t\r\u\e ]]
++ cloud_config_arg=--cloud-provider=external
++ APISERVER_LOG=/home/ubuntu/workspace/logs/kubernetes/kube-apiserver.log
++ APISERVER_PID=32659
++ echo 'Waiting for apiserver to come up'
+Waiting for apiserver to come up
++ kube::util::wait_for_url https://192.168.5.23:6443/healthz 'apiserver: ' 1 60 5
++ local url=https://192.168.5.23:6443/healthz
++ local 'prefix=apiserver: '
++ local wait=1
++ local times=60
++ local maxtime=5
++ which curl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube apiserver --authorization-mode=Node,RBAC --allow-privileged --runtime-config=admissionregistration.k8s.io/v1alpha1 --cloud-provider=external --advertise-address=192.168.5.23 --v=4 --vmodule= --cert-dir=/var/run/kubernetes --client-ca-file=/var/run/kubernetes/client-ca.crt --service-account-key-file=/tmp/kube-serviceaccount.key --service-account-lookup=true --enable-admission-plugins=Initializers,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,StorageObjectInUseProtection --disable-admission-plugins= --admission-control-config-file= --bind-address=0.0.0.0 --secure-port=6443 --tls-cert-file=/var/run/kubernetes/serving-kube-apiserver.crt --tls-private-key-file=/var/run/kubernetes/serving-kube-apiserver.key --insecure-bind-address=192.168.5.23 --insecure-port=8080 --storage-backend=etcd3 --etcd-servers=http://127.0.0.1:2379 --service-cluster-ip-range=10.0.0.0/24 --feature-gates=AllAlpha=false --external-hostname=localhost --requestheader-username-headers=X-Remote-User --requestheader-group-headers=X-Remote-Group --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-client-ca-file=/var/run/kubernetes/request-header-ca.crt --requestheader-allowed-names=system:auth-proxy --proxy-client-cert-file=/var/run/kubernetes/client-auth-proxy.crt --proxy-client-key-file=/var/run/kubernetes/client-auth-proxy.key '--cors-allowed-origins=/127.0.0.1(:[0-9]+)?$,/localhost(:[0-9]+)?$'
++ local i
+++ seq 1 60
++ for i in '$(seq 1 "$times")'
++ local out
+++ curl --max-time 5 -gkfs https://192.168.5.23:6443/healthz
++ out=
++ sleep 1
++ for i in '$(seq 1 "$times")'
++ local out
+++ curl --max-time 5 -gkfs https://192.168.5.23:6443/healthz
++ out=
++ sleep 1
++ for i in '$(seq 1 "$times")'
++ local out
+++ curl --max-time 5 -gkfs https://192.168.5.23:6443/healthz
++ out=
++ sleep 1
++ for i in '$(seq 1 "$times")'
++ local out
+++ curl --max-time 5 -gkfs https://192.168.5.23:6443/healthz
++ out=
++ sleep 1
++ for i in '$(seq 1 "$times")'
++ local out
+++ curl --max-time 5 -gkfs https://192.168.5.23:6443/healthz
++ out=ok
++ kube::log::status 'On try 5, apiserver: : ok'
++ local V=0
++ [[ 5 < 0 ]]
+++ date '+[%m%d %H:%M:%S]'
++ timestamp='[0508 14:36:20]'
++ echo '+++ [0508 14:36:20] On try 5, apiserver: : ok'
++++ [0508 14:36:20] On try 5, apiserver: : ok
++ shift
++ return 0
++ kube::util::write_client_kubeconfig '' /var/run/kubernetes /var/run/kubernetes/server-ca.crt localhost 6443 admin
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca_file=/var/run/kubernetes/server-ca.crt
++ local api_host=localhost
++ local api_port=6443
++ local client_id=admin
++ local token=
++ cat
++ tee /var/run/kubernetes/admin.kubeconfig
+++ whoami
++ username=root
++ /usr/bin/env bash -e
+++ kube::util::find-binary kubectl
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ kube::util::find-binary-for-platform kubectl linux/amd64
+++ local -r lookfor=kubectl
+++ local -r platform=linux/amd64
+++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
+++ local locations
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/admin.kubeconfig config view --minify --flatten
++ mv -f /tmp/admin.kubeconfig /var/run/kubernetes/admin.kubeconfig
++ chown root /var/run/kubernetes/admin.kubeconfig
++ chown root /var/run/kubernetes/client-admin.key
++ kube::util::write_client_kubeconfig '' /var/run/kubernetes /var/run/kubernetes/server-ca.crt localhost 6443 kubelet
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca_file=/var/run/kubernetes/server-ca.crt
++ local api_host=localhost
++ local api_port=6443
++ local client_id=kubelet
++ local token=
++ cat
++ tee /var/run/kubernetes/kubelet.kubeconfig
+++ whoami
++ username=root
++ /usr/bin/env bash -e
+++ kube::util::find-binary kubectl
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ kube::util::find-binary-for-platform kubectl linux/amd64
+++ local -r lookfor=kubectl
+++ local -r platform=linux/amd64
+++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
+++ local locations
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/kubelet.kubeconfig config view --minify --flatten
++ mv -f /tmp/kubelet.kubeconfig /var/run/kubernetes/kubelet.kubeconfig
++ chown root /var/run/kubernetes/kubelet.kubeconfig
++ kube::util::write_client_kubeconfig '' /var/run/kubernetes /var/run/kubernetes/server-ca.crt localhost 6443 kube-proxy
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca_file=/var/run/kubernetes/server-ca.crt
++ local api_host=localhost
++ local api_port=6443
++ local client_id=kube-proxy
++ local token=
++ cat
++ tee /var/run/kubernetes/kube-proxy.kubeconfig
+++ whoami
++ username=root
++ /usr/bin/env bash -e
+++ kube::util::find-binary kubectl
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ kube::util::find-binary-for-platform kubectl linux/amd64
+++ local -r lookfor=kubectl
+++ local -r platform=linux/amd64
+++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
+++ local locations
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/kube-proxy.kubeconfig config view --minify --flatten
++ mv -f /tmp/kube-proxy.kubeconfig /var/run/kubernetes/kube-proxy.kubeconfig
++ chown root /var/run/kubernetes/kube-proxy.kubeconfig
++ kube::util::write_client_kubeconfig '' /var/run/kubernetes /var/run/kubernetes/server-ca.crt localhost 6443 controller
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca_file=/var/run/kubernetes/server-ca.crt
++ local api_host=localhost
++ local api_port=6443
++ local client_id=controller
++ local token=
++ cat
++ tee /var/run/kubernetes/controller.kubeconfig
+++ whoami
++ username=root
++ /usr/bin/env bash -e
+++ kube::util::find-binary kubectl
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ kube::util::find-binary-for-platform kubectl linux/amd64
+++ local -r lookfor=kubectl
+++ local -r platform=linux/amd64
+++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
+++ local locations
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/controller.kubeconfig config view --minify --flatten
++ mv -f /tmp/controller.kubeconfig /var/run/kubernetes/controller.kubeconfig
++ chown root /var/run/kubernetes/controller.kubeconfig
++ kube::util::write_client_kubeconfig '' /var/run/kubernetes /var/run/kubernetes/server-ca.crt localhost 6443 scheduler
++ local sudo=
++ local dest_dir=/var/run/kubernetes
++ local ca_file=/var/run/kubernetes/server-ca.crt
++ local api_host=localhost
++ local api_port=6443
++ local client_id=scheduler
++ local token=
++ cat
++ tee /var/run/kubernetes/scheduler.kubeconfig
+++ whoami
++ username=root
++ /usr/bin/env bash -e
+++ kube::util::find-binary kubectl
++++ kube::util::host_platform
++++ local host_os
++++ local host_arch
++++ case "$(uname -s)" in
+++++ uname -s
++++ host_os=linux
++++ case "$(uname -m)" in
+++++ uname -m
++++ host_arch=amd64
++++ echo linux/amd64
+++ kube::util::find-binary-for-platform kubectl linux/amd64
+++ local -r lookfor=kubectl
+++ local -r platform=linux/amd64
+++ locations=("${KUBE_ROOT}/_output/bin/${lookfor}" "${KUBE_ROOT}/_output/dockerized/bin/${platform}/${lookfor}" "${KUBE_ROOT}/_output/local/bin/${platform}/${lookfor}" "${KUBE_ROOT}/platforms/${platform}/${lookfor}")
+++ local locations
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/" -type f -executable     -path "*/${platform/\//_}*/${lookfor}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/ -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ local -r bin=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
+++ echo -n /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/scheduler.kubeconfig config view --minify --flatten
++ mv -f /tmp/scheduler.kubeconfig /var/run/kubernetes/scheduler.kubeconfig
++ chown root /var/run/kubernetes/scheduler.kubeconfig
++ [[ -z '' ]]
++ AUTH_ARGS='--client-key=/var/run/kubernetes/client-admin.key --client-certificate=/var/run/kubernetes/client-admin.crt'
++ cp /var/run/kubernetes/admin.kubeconfig /var/run/kubernetes/admin-kube-aggregator.kubeconfig
+++ whoami
++ chown root /var/run/kubernetes/admin-kube-aggregator.kubeconfig
++ /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh config set-cluster local-up-cluster --kubeconfig=/var/run/kubernetes/admin-kube-aggregator.kubeconfig --server=https://192.168.5.23:31090
++ set -o errexit
++ set -o nounset
++ set -o pipefail
+++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh
++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/..
++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/kube-util.sh
++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/kube-util.sh
+++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/..
+++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/skeleton/util.sh
+++ [[ '' != \k\u\b\e\r\n\e\t\e\s\-\a\n\y\w\h\e\r\e ]]
+++ [[ -n '' ]]
+++ KUBERNETES_PROVIDER=gce
+++ PROVIDER_VARS=
+++ PROVIDER_UTILS=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh
+++ '[' -f /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh ']'
+++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh
++++ readonly GCE_MAX_LOCAL_SSD=8
++++ GCE_MAX_LOCAL_SSD=8
+++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh
++++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../..
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/config-default.sh
++++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/config-default.sh
+++++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../..
+++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/gce/config-common.sh
++++++ NODE_SCOPES=monitoring,logging-write,storage-ro
+++++ GCE_API_ENDPOINT=
+++++ GCLOUD=gcloud
+++++ ZONE=us-central1-b
+++++ REGION=us-central1
+++++ RELEASE_REGION_FALLBACK=false
+++++ REGIONAL_KUBE_ADDONS=true
+++++ NODE_SIZE=n1-standard-2
+++++ NUM_NODES=3
++++++ get-master-size
++++++ local suggested_master_size=1
++++++ [[ 3 -gt 5 ]]
++++++ [[ 3 -gt 10 ]]
++++++ [[ 3 -gt 100 ]]
++++++ [[ 3 -gt 250 ]]
++++++ [[ 3 -gt 500 ]]
++++++ [[ 3 -gt 3000 ]]
++++++ echo 1
+++++ MASTER_SIZE=n1-standard-1
+++++ MASTER_MIN_CPU_ARCHITECTURE=
+++++ MASTER_DISK_TYPE=pd-ssd
++++++ get-master-disk-size
++++++ local suggested_master_disk_size=20GB
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ echo 20GB
+++++ MASTER_DISK_SIZE=20GB
++++++ get-master-root-disk-size
++++++ local suggested_master_root_disk_size=20GB
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ echo 20GB
+++++ MASTER_ROOT_DISK_SIZE=20GB
+++++ NODE_DISK_TYPE=pd-standard
+++++ NODE_DISK_SIZE=100GB
+++++ NODE_LOCAL_SSDS=0
+++++ NODE_LOCAL_SSDS_EXT=
+++++ NODE_ACCELERATORS=
+++++ REGISTER_MASTER_KUBELET=true
+++++ PREEMPTIBLE_NODE=false
+++++ PREEMPTIBLE_MASTER=false
+++++ KUBE_DELETE_NODES=true
+++++ KUBE_DELETE_NETWORK=
+++++ CREATE_CUSTOM_NETWORK=false
+++++ MASTER_OS_DISTRIBUTION=gci
+++++ NODE_OS_DISTRIBUTION=gci
+++++ [[ gci == \c\o\s ]]
+++++ [[ gci == \c\o\s ]]
+++++ [[ gci == \d\e\b\i\a\n ]]
+++++ CVM_VERSION=container-vm-v20170627
+++++ GCI_VERSION=cos-stable-65-10323-64-0
+++++ MASTER_IMAGE=
+++++ MASTER_IMAGE_PROJECT=cos-cloud
+++++ NODE_IMAGE=cos-stable-65-10323-64-0
+++++ NODE_IMAGE_PROJECT=cos-cloud
+++++ NODE_SERVICE_ACCOUNT=default
+++++ CONTAINER_RUNTIME=docker
+++++ CONTAINER_RUNTIME_ENDPOINT=
+++++ CONTAINER_RUNTIME_NAME=
+++++ LOAD_IMAGE_COMMAND=
+++++ MASTER_EXTRA_METADATA=
+++++ NODE_EXTRA_METADATA=
+++++ KUBELET_TEST_ARGS=
+++++ NETWORK=default
+++++ [[ default == \d\e\f\a\u\l\t ]]
+++++ KUBE_DELETE_NETWORK=false
+++++ [[ false == true ]]
+++++ INSTANCE_PREFIX=kubernetes
+++++ CLUSTER_NAME=kubernetes
+++++ MASTER_NAME=kubernetes-master
+++++ AGGREGATOR_MASTER_NAME=kubernetes-aggregator
+++++ INITIAL_ETCD_CLUSTER=kubernetes-master
+++++ ETCD_QUORUM_READ=false
+++++ MASTER_TAG=kubernetes-master
+++++ NODE_TAG=kubernetes-minion
++++++ get-cluster-ip-range
++++++ local suggested_range=10.64.0.0/14
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ [[ 3 -gt 4000 ]]
++++++ echo 10.64.0.0/14
+++++ CLUSTER_IP_RANGE=10.64.0.0/14
+++++ MASTER_IP_RANGE=10.246.0.0/24
++++++ get-node-ip-range
++++++ [[ -n '' ]]
++++++ local suggested_range=10.40.0.0/22
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ [[ 3 -gt 4000 ]]
++++++ echo 10.40.0.0/22
+++++ NODE_IP_RANGE=10.40.0.0/22
+++++ NODE_SCOPES=monitoring,logging-write,storage-ro
+++++ EXTRA_DOCKER_OPTS=
+++++ VOLUME_PLUGIN_DIR=/home/kubernetes/flexvolume
+++++ SERVICE_CLUSTER_IP_RANGE=10.0.0.0/16
+++++ ALLOCATE_NODE_CIDRS=true
+++++ ENABLE_DOCKER_REGISTRY_CACHE=true
+++++ ENABLE_L7_LOADBALANCING=glbc
+++++ ENABLE_CLUSTER_MONITORING=influxdb
+++++ ENABLE_PROMETHEUS_MONITORING=false
+++++ ENABLE_METRICS_SERVER=true
+++++ ENABLE_METADATA_AGENT=none
+++++ HEAPSTER_MACHINE_TYPE=
+++++ NODE_LABELS=beta.kubernetes.io/fluentd-ds-ready=true
+++++ NON_MASTER_NODE_LABELS=
+++++ [[ '' == \c\a\l\i\c\o ]]
+++++ ENABLE_METADATA_CONCEALMENT=false
+++++ [[ false == \t\r\u\e ]]
+++++ ENCRYPTION_PROVIDER_CONFIG=
+++++ [[ -z '' ]]
++++++ cat
++++++ base64
++++++ tr -d '\r\n'
+++++++ dd if=/dev/random bs=32 count=1 status=none
+++++++ base64
+++++++ tr -d '\r\n'
+++++ ENCRYPTION_PROVIDER_CONFIG=a2luZDogRW5jcnlwdGlvbkNvbmZpZwphcGlWZXJzaW9uOiB2MQpyZXNvdXJjZXM6CiAgLSByZXNvdXJjZXM6CiAgICAtIHNlY3JldHMKICAgIHByb3ZpZGVyczoKICAgIC0gYWVzZ2NtOgogICAgICAgIGtleXM6CiAgICAgICAgLSBuYW1lOiBrZXkxCiAgICAgICAgICBzZWNyZXQ6IGgwS1Z2ejFrZ3hJUlVnUDNGWW1kWkhsWHFIdzBwODdidG53d1BkblRuSzQ9Cg==
+++++ ENABLE_NODE_LOGGING=true
+++++ LOGGING_DESTINATION=gcp
+++++ ENABLE_CLUSTER_LOGGING=true
+++++ ELASTICSEARCH_LOGGING_REPLICAS=1
+++++ [[ false == \t\r\u\e ]]
+++++ RUNTIME_CONFIG=
+++++ [[ '' == \A\l\l\A\l\p\h\a\=\t\r\u\e ]]
+++++ FEATURE_GATES=ExperimentalCriticalPodAnnotation=true
+++++ [[ ! -z '' ]]
+++++ CLUSTER_DNS_CORE_DNS=false
+++++ ENABLE_CLUSTER_DNS=false
+++++ DNS_SERVER_IP=10.0.0.10
+++++ DNS_DOMAIN=cluster.local
+++++ ENABLE_DNS_HORIZONTAL_AUTOSCALER=true
+++++ ENABLE_CLUSTER_UI=true
+++++ [[ gci == \g\c\i ]]
+++++ ENABLE_NODE_PROBLEM_DETECTOR=standalone
+++++ NODE_PROBLEM_DETECTOR_VERSION=
+++++ NODE_PROBLEM_DETECTOR_TAR_HASH=
+++++ ENABLE_CLUSTER_AUTOSCALER=false
+++++ [[ false == \t\r\u\e ]]
+++++ ENABLE_RESCHEDULER=true
+++++ ENABLE_IP_ALIASES=false
+++++ NODE_IPAM_MODE=RangeAllocator
+++++ '[' false = true ']'
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ ADMISSION_CONTROL=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,PersistentVolumeClaimResize,DefaultTolerationSeconds,NodeRestriction,Priority,StorageObjectInUseProtection
+++++ [[ '' == \t\r\u\e ]]
+++++ ADMISSION_CONTROL=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,PersistentVolumeClaimResize,DefaultTolerationSeconds,NodeRestriction,Priority,StorageObjectInUseProtection,MutatingAdmissionWebhook,ValidatingAdmissionWebhook
+++++ ADMISSION_CONTROL=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,PersistentVolumeClaimResize,DefaultTolerationSeconds,NodeRestriction,Priority,StorageObjectInUseProtection,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
+++++ KUBE_UP_AUTOMATIC_CLEANUP=false
+++++ STORAGE_BACKEND=
+++++ NETWORK_PROVIDER=kubenet
+++++ NETWORK_POLICY_PROVIDER=none
+++++ NON_MASQUERADE_CIDR=0.0.0.0/0
+++++ HAIRPIN_MODE=hairpin-veth
+++++ E2E_STORAGE_TEST_ENVIRONMENT=false
+++++ EVICTION_HARD='memory.available<250Mi,nodefs.available<10%,nodefs.inodesFree<5%'
+++++ SCHEDULING_ALGORITHM_PROVIDER=
+++++ ENABLE_DEFAULT_STORAGE_CLASS=true
+++++ ENABLE_LEGACY_ABAC=false
+++++ METADATA_CLOBBERS_CONFIG=false
+++++ ENABLE_BIG_CLUSTER_SUBNETS=false
+++++ [[ '' == \t\r\u\e ]]
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ FLUENTD_GCP_VERSION=0.2-1.5.30-1-k8s
+++++ FLUENTD_GCP_MEMORY_LIMIT=
+++++ FLUENTD_GCP_CPU_REQUEST=
+++++ FLUENTD_GCP_MEMORY_REQUEST=
+++++ HEAPSTER_GCP_BASE_MEMORY=140Mi
+++++ HEAPSTER_GCP_MEMORY_PER_NODE=4
+++++ HEAPSTER_GCP_BASE_CPU=80m
+++++ HEAPSTER_GCP_CPU_PER_NODE=0.5
+++++ PROVIDER_VARS=' FLUENTD_GCP_VERSION FLUENTD_GCP_MEMORY_LIMIT FLUENTD_GCP_CPU_REQUEST FLUENTD_GCP_MEMORY_REQUEST HEAPSTER_GCP_BASE_MEMORY HEAPSTER_GCP_MEMORY_PER_NODE HEAPSTER_GCP_BASE_CPU HEAPSTER_GCP_CPU_PER_NODE CUSTOM_KUBE_DASHBOARD_BANNER LOGGING_STACKDRIVER_RESOURCE_TYPES STACKDRIVER_METADATA_AGENT_URL'
+++++ ENABLE_NODE_JOURNAL=false
+++++ PROMETHEUS_TO_SD_ENDPOINT=https://monitoring.googleapis.com/
+++++ PROMETHEUS_TO_SD_PREFIX=custom.googleapis.com
+++++ ENABLE_PROMETHEUS_TO_SD=false
+++++ KUBE_PROXY_DAEMONSET=false
+++++ CLUSTER_SIGNING_DURATION=
+++++ ENABLE_POD_PRIORITY=
+++++ [[ '' == \t\r\u\e ]]
+++++ ROTATE_CERTIFICATES=
+++++ CONCURRENT_SERVICE_SYNCS=
+++++ [[ '' == \t\r\u\e ]]
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/common.sh
+++++ set -o errexit
+++++ set -o nounset
+++++ set -o pipefail
+++++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/common.sh
++++++ cd /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/..
++++++ pwd
+++++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes
+++++ DEFAULT_KUBECONFIG=/home/ubuntu/.kube/config
+++++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/util.sh
++++++ [[ -z '' ]]
++++++ declare -r 'color_start=\033['
++++++ declare -r 'color_red=\033[0;31m'
++++++ declare -r 'color_yellow=\033[0;33m'
++++++ declare -r 'color_green=\033[0;32m'
++++++ declare -r 'color_norm=\033[0m'
+++++ KUBE_RELEASE_VERSION_REGEX='^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-([a-zA-Z0-9]+)\.(0|[1-9][0-9]*))?$'
+++++ KUBE_RELEASE_VERSION_DASHED_REGEX='v(0|[1-9][0-9]*)-(0|[1-9][0-9]*)-(0|[1-9][0-9]*)(-([a-zA-Z0-9]+)-(0|[1-9][0-9]*))?'
+++++ KUBE_CI_VERSION_REGEX='^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)-([a-zA-Z0-9]+)\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*)\+[-0-9a-z]*)?$'
+++++ KUBE_CI_VERSION_DASHED_REGEX='^v(0|[1-9][0-9]*)-(0|[1-9][0-9]*)-(0|[1-9][0-9]*)-([a-zA-Z0-9]+)-(0|[1-9][0-9]*)(-(0|[1-9][0-9]*)\+[-0-9a-z]*)?'
++++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/util.sh
+++++ [[ -z \033[ ]]
++++ [[ gci == \g\c\i ]]
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/node-helper.sh
+++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/helper.sh
++++ [[ gci == \t\r\u\s\t\y ]]
++++ [[ gci == \g\c\i ]]
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/master-helper.sh
+++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/helper.sh
++++ [[ 0 -ge 1 ]]
++++ [[ gci == \g\c\i ]]
++++ DEFAULT_GCI_PROJECT=google-containers
++++ [[ cos-stable-65-10323-64-0 == \c\o\s* ]]
++++ DEFAULT_GCI_PROJECT=cos-cloud
++++ MASTER_IMAGE_PROJECT=cos-cloud
++++ MASTER_IMAGE=cos-stable-65-10323-64-0
++++ set-node-image
++++ [[ gci == \g\c\i ]]
++++ DEFAULT_GCI_PROJECT=google-containers
++++ [[ cos-stable-65-10323-64-0 == \c\o\s* ]]
++++ DEFAULT_GCI_PROJECT=cos-cloud
++++ NODE_IMAGE=cos-stable-65-10323-64-0
++++ NODE_IMAGE_PROJECT=cos-cloud
++++ [[ false == \t\r\u\e ]]
++++ NODE_INSTANCE_PREFIX=kubernetes-minion
++++ NODE_TAGS=kubernetes-minion
++++ ALLOCATE_NODE_CIDRS=true
++++ PREEXISTING_NETWORK=false
++++ PREEXISTING_NETWORK_MODE=
++++ KUBE_PROMPT_FOR_UPDATE=n
++++ KUBE_CLUSTER_INITIALIZATION_TIMEOUT=300
++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/clientbin.sh
+++ set -o errexit
+++ set -o nounset
+++ set -o pipefail
+++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes
+++ case "$(uname -s)" in
++++ uname -s
+++ host_os=linux
+++ case "$(uname -m)" in
++++ uname -m
+++ host_arch=amd64
++ [[ -z '' ]]
+++ get_bin kubectl cmd/kubectl
+++ bin=kubectl
+++ srcdir=cmd/kubectl
+++ [[ kubectl == '' ]]
+++ [[ cmd/kubectl == '' ]]
+++ locations=("${KUBE_ROOT}/_output/bin/${bin}" "${KUBE_ROOT}/_output/dockerized/bin/${host_os}/${host_arch}/${bin}" "${KUBE_ROOT}/_output/local/bin/${host_os}/${host_arch}/${bin}" "${KUBE_ROOT}/platforms/${host_os}/${host_arch}/${bin}")
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/${srcdir}" -type f -executable     -path "*/${host_os}_${host_arch}*/${bin}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/cmd/kubectl -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ echo /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ kubectl=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ [[ ! -x /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl ]]
++ kubectl=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ [[ gce == \g\k\e ]]
++ [[ gce == \u\b\u\n\t\u ]]
++ false
++ [[ config =~ ^(path)$ ]]
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl config set-cluster local-up-cluster --kubeconfig=/var/run/kubernetes/admin-kube-aggregator.kubeconfig --server=https://192.168.5.23:31090
+Cluster "local-up-cluster" set.
++ echo 'use '\''kubectl --kubeconfig=/var/run/kubernetes/admin-kube-aggregator.kubeconfig'\'' to use the aggregated API server'
+use 'kubectl --kubeconfig=/var/run/kubernetes/admin-kube-aggregator.kubeconfig' to use the aggregated API server
++ start_controller_manager
++ node_cidr_args=
++ [[ '' == \k\u\b\e\n\e\t ]]
++ cloud_config_arg='--cloud-provider=openstack --cloud-config=/etc/kubernetes/cloud-config'
++ [[ true == \t\r\u\e ]]
++ cloud_config_arg=--cloud-provider=external
++ cloud_config_arg+=' --external-cloud-volume-plugin=openstack'
++ cloud_config_arg+=' --cloud-config=/etc/kubernetes/cloud-config'
++ CTLRMGR_LOG=/home/ubuntu/workspace/logs/kubernetes/kube-controller-manager.log
++ CTLRMGR_PID=453
++ [[ true == \t\r\u\e ]]
++ start_cloud_controller_manager
++ '[' -z /etc/kubernetes/cloud-config ']'
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube controller-manager --v=4 --vmodule= --service-account-private-key-file=/tmp/kube-serviceaccount.key --root-ca-file=/var/run/kubernetes/server-ca.crt --cluster-signing-cert-file=/var/run/kubernetes/server-ca.crt --cluster-signing-key-file=/var/run/kubernetes/server-ca.key --enable-hostpath-provisioner=true --pvclaimbinder-sync-period=15s --feature-gates=AllAlpha=false --cloud-provider=external --external-cloud-volume-plugin=openstack --cloud-config=/etc/kubernetes/cloud-config --kubeconfig /var/run/kubernetes/controller.kubeconfig --use-service-account-credentials '--controllers=*' --master=https://localhost:6443
++ '[' '!' -f /etc/kubernetes/cloud-config ']'
++ node_cidr_args=
++ [[ '' == \k\u\b\e\n\e\t ]]
++ CLOUD_CTLRMGR_LOG=/home/ubuntu/workspace/logs/kubernetes/cloud-controller-manager.log
++ CLOUD_CTLRMGR_PID=454
++ start_kubeproxy
++ /home/ubuntu/src/k8s.io/cloud-provider-openstack/openstack-cloud-controller-manager --v=4 --vmodule= --feature-gates=AllAlpha=false --cloud-provider=openstack --cloud-config=/etc/kubernetes/cloud-config --kubeconfig /var/run/kubernetes/controller.kubeconfig --use-service-account-credentials --master=https://localhost:6443
++ PROXY_LOG=/home/ubuntu/workspace/logs/kubernetes/kube-proxy.log
++ cat
++ [[ -n AllAlpha=false ]]
++ echo featureGates:
+++ echo AllAlpha=false
+++ tr , ' '
++ for gate in '$(echo ${FEATURE_GATES} | tr '\'','\'' '\'' '\'')'
++ echo AllAlpha=false
++ sed -e 's/\(.*\)=\(.*\)/  \1: \2/'
++ PROXY_PID=471
++ SCHEDULER_LOG=/home/ubuntu/workspace/logs/kubernetes/kube-scheduler.log
++ sudo /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube proxy --v=4 --config=/tmp/kube-proxy.yaml --master=https://localhost:6443
++ SCHEDULER_PID=472
++ start_kubedns
++ [[ false = true ]]
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube scheduler --v=4 --kubeconfig /var/run/kubernetes/scheduler.kubeconfig --feature-gates=AllAlpha=false --master=https://localhost:6443
++ start_kubedashboard
++ [[ false = true ]]
++ [[ all != \n\o\k\u\b\e\l\e\t ]]
++ case "$(uname -s)" in
+++ uname -s
++ start_kubelet
++ KUBELET_LOG=/home/ubuntu/workspace/logs/kubernetes/kubelet.log
++ mkdir -p /var/run/kubernetes/static-pods
++ priv_arg=
++ [[ -n true ]]
++ priv_arg='--allow-privileged '
++ cloud_config_arg='--cloud-provider=openstack --cloud-config=/etc/kubernetes/cloud-config'
++ [[ true == \t\r\u\e ]]
++ cloud_config_arg=--cloud-provider=external
+++ hostname
++ cloud_config_arg+=' --provider-id=default'
++ mkdir -p /var/lib/kubelet
++ [[ false = true ]]
++ dns_args=--cluster-dns=8.8.8.8
++ net_plugin_args=
++ [[ -n '' ]]
++ auth_args=
++ [[ -n '' ]]
++ [[ -n '' ]]
++ [[ -n '' ]]
++ cni_conf_dir_args=
++ [[ -n '' ]]
++ cni_bin_dir_args=
++ [[ -n '' ]]
++ container_runtime_endpoint_args=
++ [[ -n '' ]]
++ image_service_endpoint_args=
++ [[ -n '' ]]
++ all_kubelet_flags=(${priv_arg} --v="${LOG_LEVEL}" --vmodule="${LOG_SPEC}" --chaos-chance="${CHAOS_CHANCE}" --container-runtime="${CONTAINER_RUNTIME}" --hostname-override="${HOSTNAME_OVERRIDE}" ${cloud_config_arg} --address="${KUBELET_HOST}" --kubeconfig "$CERT_DIR"/kubelet.kubeconfig --feature-gates="${FEATURE_GATES}" --cpu-cfs-quota="${CPU_CFS_QUOTA}" --enable-controller-attach-detach="${ENABLE_CONTROLLER_ATTACH_DETACH}" --cgroups-per-qos="${CGROUPS_PER_QOS}" --cgroup-driver="${CGROUP_DRIVER}" --keep-terminated-pod-volumes="${KEEP_TERMINATED_POD_VOLUMES}" --eviction-hard="${EVICTION_HARD}" --eviction-soft="${EVICTION_SOFT}" --eviction-pressure-transition-period="${EVICTION_PRESSURE_TRANSITION_PERIOD}" --pod-manifest-path="${POD_MANIFEST_PATH}" --fail-swap-on="${FAIL_SWAP_ON}" ${auth_args} ${dns_args} ${cni_conf_dir_args} ${cni_bin_dir_args} ${net_plugin_args} ${container_runtime_endpoint_args} ${image_service_endpoint_args} --port="$KUBELET_PORT" ${KUBELET_FLAGS})
++ [[ -z '' ]]
++ KUBELET_PID=483
++ '[' -n 483 ']'
++ ps -p 483
++ sudo -E /home/ubuntu/src/k8s.io/kubernetes/_output/bin/hyperkube kubelet --allow-privileged --v=4 --vmodule= --chaos-chance=0.0 --container-runtime=docker --hostname-override=default --cloud-provider=external --provider-id=default --address=0.0.0.0 --kubeconfig /var/run/kubernetes/kubelet.kubeconfig --feature-gates=AllAlpha=false --cpu-cfs-quota=true --enable-controller-attach-detach=true --cgroups-per-qos=true --cgroup-driver=cgroupfs --keep-terminated-pod-volumes=true '--eviction-hard=memory.available<100Mi,nodefs.available<10%,nodefs.inodesFree<5%' --eviction-soft= --eviction-pressure-transition-period=1m --pod-manifest-path=/var/run/kubernetes/static-pods --fail-swap-on=false --cluster-dns=8.8.8.8 --port=10250
++ echo 'kubelet ( 483 ) is running.'
+kubelet ( 483 ) is running.
++ [[ -n '' ]]
++ [[ true = \t\r\u\e ]]
++ create_storage_class
++ '[' -z openstack ']'
++ CLASS_FILE=/home/ubuntu/src/k8s.io/kubernetes/cluster/addons/storage-class/openstack/default.yaml
++ '[' -e /home/ubuntu/src/k8s.io/kubernetes/cluster/addons/storage-class/openstack/default.yaml ']'
++ echo 'Create default storage class for openstack'
+Create default storage class for openstack
++ /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh --kubeconfig=/var/run/kubernetes/admin.kubeconfig create -f /home/ubuntu/src/k8s.io/kubernetes/cluster/addons/storage-class/openstack/default.yaml
++ set -o errexit
++ set -o nounset
++ set -o pipefail
+++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh
++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/..
++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/kube-util.sh
++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/kube-util.sh
+++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/..
+++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/skeleton/util.sh
+++ [[ '' != \k\u\b\e\r\n\e\t\e\s\-\a\n\y\w\h\e\r\e ]]
+++ [[ -n '' ]]
+++ KUBERNETES_PROVIDER=gce
+++ PROVIDER_VARS=
+++ PROVIDER_UTILS=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh
+++ '[' -f /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh ']'
+++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh
++++ readonly GCE_MAX_LOCAL_SSD=8
++++ GCE_MAX_LOCAL_SSD=8
+++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/util.sh
++++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../..
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/config-default.sh
++++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/config-default.sh
+++++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../..
+++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/gce/config-common.sh
++++++ NODE_SCOPES=monitoring,logging-write,storage-ro
+++++ GCE_API_ENDPOINT=
+++++ GCLOUD=gcloud
+++++ ZONE=us-central1-b
+++++ REGION=us-central1
+++++ RELEASE_REGION_FALLBACK=false
+++++ REGIONAL_KUBE_ADDONS=true
+++++ NODE_SIZE=n1-standard-2
+++++ NUM_NODES=3
++++++ get-master-size
++++++ local suggested_master_size=1
++++++ [[ 3 -gt 5 ]]
++++++ [[ 3 -gt 10 ]]
++++++ [[ 3 -gt 100 ]]
++++++ [[ 3 -gt 250 ]]
++++++ [[ 3 -gt 500 ]]
++++++ [[ 3 -gt 3000 ]]
++++++ echo 1
+++++ MASTER_SIZE=n1-standard-1
+++++ MASTER_MIN_CPU_ARCHITECTURE=
+++++ MASTER_DISK_TYPE=pd-ssd
++++++ get-master-disk-size
++++++ local suggested_master_disk_size=20GB
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ echo 20GB
+++++ MASTER_DISK_SIZE=20GB
++++++ get-master-root-disk-size
++++++ local suggested_master_root_disk_size=20GB
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ echo 20GB
+++++ MASTER_ROOT_DISK_SIZE=20GB
+++++ NODE_DISK_TYPE=pd-standard
+++++ NODE_DISK_SIZE=100GB
+++++ NODE_LOCAL_SSDS=0
+++++ NODE_LOCAL_SSDS_EXT=
+++++ NODE_ACCELERATORS=
+++++ REGISTER_MASTER_KUBELET=true
+++++ PREEMPTIBLE_NODE=false
+++++ PREEMPTIBLE_MASTER=false
+++++ KUBE_DELETE_NODES=true
+++++ KUBE_DELETE_NETWORK=
+++++ CREATE_CUSTOM_NETWORK=false
+++++ MASTER_OS_DISTRIBUTION=gci
+++++ NODE_OS_DISTRIBUTION=gci
+++++ [[ gci == \c\o\s ]]
+++++ [[ gci == \c\o\s ]]
+++++ [[ gci == \d\e\b\i\a\n ]]
+++++ CVM_VERSION=container-vm-v20170627
+++++ GCI_VERSION=cos-stable-65-10323-64-0
+++++ MASTER_IMAGE=
+++++ MASTER_IMAGE_PROJECT=cos-cloud
+++++ NODE_IMAGE=cos-stable-65-10323-64-0
+++++ NODE_IMAGE_PROJECT=cos-cloud
+++++ NODE_SERVICE_ACCOUNT=default
+++++ CONTAINER_RUNTIME=docker
+++++ CONTAINER_RUNTIME_ENDPOINT=
+++++ CONTAINER_RUNTIME_NAME=
+++++ LOAD_IMAGE_COMMAND=
+++++ MASTER_EXTRA_METADATA=
+++++ NODE_EXTRA_METADATA=
+++++ KUBELET_TEST_ARGS=
+++++ NETWORK=default
+++++ [[ default == \d\e\f\a\u\l\t ]]
+++++ KUBE_DELETE_NETWORK=false
+++++ [[ false == true ]]
+++++ INSTANCE_PREFIX=kubernetes
+++++ CLUSTER_NAME=kubernetes
+++++ MASTER_NAME=kubernetes-master
+++++ AGGREGATOR_MASTER_NAME=kubernetes-aggregator
+++++ INITIAL_ETCD_CLUSTER=kubernetes-master
+++++ ETCD_QUORUM_READ=false
+++++ MASTER_TAG=kubernetes-master
+++++ NODE_TAG=kubernetes-minion
++++++ get-cluster-ip-range
++++++ local suggested_range=10.64.0.0/14
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ [[ 3 -gt 4000 ]]
++++++ echo 10.64.0.0/14
+++++ CLUSTER_IP_RANGE=10.64.0.0/14
+++++ MASTER_IP_RANGE=10.246.0.0/24
++++++ get-node-ip-range
++++++ [[ -n '' ]]
++++++ local suggested_range=10.40.0.0/22
++++++ [[ 3 -gt 1000 ]]
++++++ [[ 3 -gt 2000 ]]
++++++ [[ 3 -gt 4000 ]]
++++++ echo 10.40.0.0/22
+++++ NODE_IP_RANGE=10.40.0.0/22
+++++ NODE_SCOPES=monitoring,logging-write,storage-ro
+++++ EXTRA_DOCKER_OPTS=
+++++ VOLUME_PLUGIN_DIR=/home/kubernetes/flexvolume
+++++ SERVICE_CLUSTER_IP_RANGE=10.0.0.0/16
+++++ ALLOCATE_NODE_CIDRS=true
+++++ ENABLE_DOCKER_REGISTRY_CACHE=true
+++++ ENABLE_L7_LOADBALANCING=glbc
+++++ ENABLE_CLUSTER_MONITORING=influxdb
+++++ ENABLE_PROMETHEUS_MONITORING=false
+++++ ENABLE_METRICS_SERVER=true
+++++ ENABLE_METADATA_AGENT=none
+++++ HEAPSTER_MACHINE_TYPE=
+++++ NODE_LABELS=beta.kubernetes.io/fluentd-ds-ready=true
+++++ NON_MASTER_NODE_LABELS=
+++++ [[ '' == \c\a\l\i\c\o ]]
+++++ ENABLE_METADATA_CONCEALMENT=false
+++++ [[ false == \t\r\u\e ]]
+++++ ENCRYPTION_PROVIDER_CONFIG=
+++++ [[ -z '' ]]
++++++ cat
++++++ base64
+++++++ base64
+++++++ dd if=/dev/random bs=32 count=1 status=none
++++++ tr -d '\r\n'
+++++++ tr -d '\r\n'
+++++ ENCRYPTION_PROVIDER_CONFIG=a2luZDogRW5jcnlwdGlvbkNvbmZpZwphcGlWZXJzaW9uOiB2MQpyZXNvdXJjZXM6CiAgLSByZXNvdXJjZXM6CiAgICAtIHNlY3JldHMKICAgIHByb3ZpZGVyczoKICAgIC0gYWVzZ2NtOgogICAgICAgIGtleXM6CiAgICAgICAgLSBuYW1lOiBrZXkxCiAgICAgICAgICBzZWNyZXQ6IGhSSVpNbEFLdnhjZ3V3SmxkUmxId1oxUTJpZTFBTko2UTVpUGR3YjMxTFk9Cg==
+++++ ENABLE_NODE_LOGGING=true
+++++ LOGGING_DESTINATION=gcp
+++++ ENABLE_CLUSTER_LOGGING=true
+++++ ELASTICSEARCH_LOGGING_REPLICAS=1
+++++ [[ false == \t\r\u\e ]]
+++++ RUNTIME_CONFIG=
+++++ [[ '' == \A\l\l\A\l\p\h\a\=\t\r\u\e ]]
+++++ FEATURE_GATES=ExperimentalCriticalPodAnnotation=true
+++++ [[ ! -z '' ]]
+++++ CLUSTER_DNS_CORE_DNS=false
+++++ ENABLE_CLUSTER_DNS=false
+++++ DNS_SERVER_IP=10.0.0.10
+++++ DNS_DOMAIN=cluster.local
+++++ ENABLE_DNS_HORIZONTAL_AUTOSCALER=true
+++++ ENABLE_CLUSTER_UI=true
+++++ [[ gci == \g\c\i ]]
+++++ ENABLE_NODE_PROBLEM_DETECTOR=standalone
+++++ NODE_PROBLEM_DETECTOR_VERSION=
+++++ NODE_PROBLEM_DETECTOR_TAR_HASH=
+++++ ENABLE_CLUSTER_AUTOSCALER=false
+++++ [[ false == \t\r\u\e ]]
+++++ ENABLE_RESCHEDULER=true
+++++ ENABLE_IP_ALIASES=false
+++++ NODE_IPAM_MODE=RangeAllocator
+++++ '[' false = true ']'
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ ADMISSION_CONTROL=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,PersistentVolumeClaimResize,DefaultTolerationSeconds,NodeRestriction,Priority,StorageObjectInUseProtection
+++++ [[ '' == \t\r\u\e ]]
+++++ ADMISSION_CONTROL=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,PersistentVolumeClaimResize,DefaultTolerationSeconds,NodeRestriction,Priority,StorageObjectInUseProtection,MutatingAdmissionWebhook,ValidatingAdmissionWebhook
+++++ ADMISSION_CONTROL=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,PersistentVolumeClaimResize,DefaultTolerationSeconds,NodeRestriction,Priority,StorageObjectInUseProtection,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
+++++ KUBE_UP_AUTOMATIC_CLEANUP=false
+++++ STORAGE_BACKEND=
+++++ NETWORK_PROVIDER=kubenet
+++++ NETWORK_POLICY_PROVIDER=none
+++++ NON_MASQUERADE_CIDR=0.0.0.0/0
+++++ HAIRPIN_MODE=hairpin-veth
+++++ E2E_STORAGE_TEST_ENVIRONMENT=false
+++++ EVICTION_HARD='memory.available<250Mi,nodefs.available<10%,nodefs.inodesFree<5%'
+++++ SCHEDULING_ALGORITHM_PROVIDER=
+++++ ENABLE_DEFAULT_STORAGE_CLASS=true
+++++ ENABLE_LEGACY_ABAC=false
+++++ METADATA_CLOBBERS_CONFIG=false
+++++ ENABLE_BIG_CLUSTER_SUBNETS=false
+++++ [[ '' == \t\r\u\e ]]
+++++ [[ -n '' ]]
+++++ [[ -n '' ]]
+++++ FLUENTD_GCP_VERSION=0.2-1.5.30-1-k8s
+++++ FLUENTD_GCP_MEMORY_LIMIT=
+++++ FLUENTD_GCP_CPU_REQUEST=
+++++ FLUENTD_GCP_MEMORY_REQUEST=
+++++ HEAPSTER_GCP_BASE_MEMORY=140Mi
+++++ HEAPSTER_GCP_MEMORY_PER_NODE=4
+++++ HEAPSTER_GCP_BASE_CPU=80m
+++++ HEAPSTER_GCP_CPU_PER_NODE=0.5
+++++ PROVIDER_VARS=' FLUENTD_GCP_VERSION FLUENTD_GCP_MEMORY_LIMIT FLUENTD_GCP_CPU_REQUEST FLUENTD_GCP_MEMORY_REQUEST HEAPSTER_GCP_BASE_MEMORY HEAPSTER_GCP_MEMORY_PER_NODE HEAPSTER_GCP_BASE_CPU HEAPSTER_GCP_CPU_PER_NODE CUSTOM_KUBE_DASHBOARD_BANNER LOGGING_STACKDRIVER_RESOURCE_TYPES STACKDRIVER_METADATA_AGENT_URL'
+++++ ENABLE_NODE_JOURNAL=false
+++++ PROMETHEUS_TO_SD_ENDPOINT=https://monitoring.googleapis.com/
+++++ PROMETHEUS_TO_SD_PREFIX=custom.googleapis.com
+++++ ENABLE_PROMETHEUS_TO_SD=false
+++++ KUBE_PROXY_DAEMONSET=false
+++++ CLUSTER_SIGNING_DURATION=
+++++ ENABLE_POD_PRIORITY=
+++++ [[ '' == \t\r\u\e ]]
+++++ ROTATE_CERTIFICATES=
+++++ CONCURRENT_SERVICE_SYNCS=
+++++ [[ '' == \t\r\u\e ]]
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/common.sh
+++++ set -o errexit
+++++ set -o nounset
+++++ set -o pipefail
+++++++ dirname /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/common.sh
++++++ cd /home/ubuntu/src/k8s.io/kubernetes/cluster/../cluster/../cluster/gce/../../cluster/gce/../../cluster/..
++++++ pwd
+++++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes
+++++ DEFAULT_KUBECONFIG=/home/ubuntu/.kube/config
+++++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/util.sh
++++++ [[ -z '' ]]
++++++ declare -r 'color_start=\033['
++++++ declare -r 'color_red=\033[0;31m'
++++++ declare -r 'color_yellow=\033[0;33m'
++++++ declare -r 'color_green=\033[0;32m'
++++++ declare -r 'color_norm=\033[0m'
+++++ KUBE_RELEASE_VERSION_REGEX='^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-([a-zA-Z0-9]+)\.(0|[1-9][0-9]*))?$'
+++++ KUBE_RELEASE_VERSION_DASHED_REGEX='v(0|[1-9][0-9]*)-(0|[1-9][0-9]*)-(0|[1-9][0-9]*)(-([a-zA-Z0-9]+)-(0|[1-9][0-9]*))?'
+++++ KUBE_CI_VERSION_REGEX='^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)-([a-zA-Z0-9]+)\.(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*)\+[-0-9a-z]*)?$'
+++++ KUBE_CI_VERSION_DASHED_REGEX='^v(0|[1-9][0-9]*)-(0|[1-9][0-9]*)-(0|[1-9][0-9]*)-([a-zA-Z0-9]+)-(0|[1-9][0-9]*)(-(0|[1-9][0-9]*)\+[-0-9a-z]*)?'
++++ source /home/ubuntu/src/k8s.io/kubernetes/hack/lib/util.sh
+++++ [[ -z \033[ ]]
++++ [[ gci == \g\c\i ]]
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/node-helper.sh
+++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/helper.sh
++++ [[ gci == \t\r\u\s\t\y ]]
++++ [[ gci == \g\c\i ]]
++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/master-helper.sh
+++++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/gce/gci/helper.sh
++++ [[ 0 -ge 1 ]]
++++ [[ gci == \g\c\i ]]
++++ DEFAULT_GCI_PROJECT=google-containers
++++ [[ cos-stable-65-10323-64-0 == \c\o\s* ]]
++++ DEFAULT_GCI_PROJECT=cos-cloud
++++ MASTER_IMAGE_PROJECT=cos-cloud
++++ MASTER_IMAGE=cos-stable-65-10323-64-0
++++ set-node-image
++++ [[ gci == \g\c\i ]]
++++ DEFAULT_GCI_PROJECT=google-containers
++++ [[ cos-stable-65-10323-64-0 == \c\o\s* ]]
++++ DEFAULT_GCI_PROJECT=cos-cloud
++++ NODE_IMAGE=cos-stable-65-10323-64-0
++++ NODE_IMAGE_PROJECT=cos-cloud
++++ [[ false == \t\r\u\e ]]
++++ NODE_INSTANCE_PREFIX=kubernetes-minion
++++ NODE_TAGS=kubernetes-minion
++++ ALLOCATE_NODE_CIDRS=true
++++ PREEXISTING_NETWORK=false
++++ PREEXISTING_NETWORK_MODE=
++++ KUBE_PROMPT_FOR_UPDATE=n
++++ KUBE_CLUSTER_INITIALIZATION_TIMEOUT=300
++ source /home/ubuntu/src/k8s.io/kubernetes/cluster/clientbin.sh
+++ set -o errexit
+++ set -o nounset
+++ set -o pipefail
+++ KUBE_ROOT=/home/ubuntu/src/k8s.io/kubernetes
+++ case "$(uname -s)" in
++++ uname -s
+++ host_os=linux
+++ case "$(uname -m)" in
++++ uname -m
+++ host_arch=amd64
++ [[ -z '' ]]
+++ get_bin kubectl cmd/kubectl
+++ bin=kubectl
+++ srcdir=cmd/kubectl
+++ [[ kubectl == '' ]]
+++ [[ cmd/kubectl == '' ]]
+++ locations=("${KUBE_ROOT}/_output/bin/${bin}" "${KUBE_ROOT}/_output/dockerized/bin/${host_os}/${host_arch}/${bin}" "${KUBE_ROOT}/_output/local/bin/${host_os}/${host_arch}/${bin}" "${KUBE_ROOT}/platforms/${host_os}/${host_arch}/${bin}")
+++ locations+=($(find "${KUBE_ROOT}/bazel-bin/${srcdir}" -type f -executable     -path "*/${host_os}_${host_arch}*/${bin}" 2>/dev/null || true))
++++ find /home/ubuntu/src/k8s.io/kubernetes/bazel-bin/cmd/kubectl -type f -executable -path '*/linux_amd64*/kubectl'
++++ true
++++ ls -t /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/dockerized/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/_output/local/bin/linux/amd64/kubectl /home/ubuntu/src/k8s.io/kubernetes/platforms/linux/amd64/kubectl
++++ head -1
++++ true
+++ echo /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ kubectl=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ [[ ! -x /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl ]]
++ kubectl=/home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl
++ [[ gce == \g\k\e ]]
++ [[ gce == \u\b\u\n\t\u ]]
++ false
++ [[ --kubeconfig=/var/run/kubernetes/admin.kubeconfig =~ ^(path)$ ]]
++ /home/ubuntu/src/k8s.io/kubernetes/_output/bin/kubectl --kubeconfig=/var/run/kubernetes/admin.kubeconfig create -f /home/ubuntu/src/k8s.io/kubernetes/cluster/addons/storage-class/openstack/default.yaml
+storageclass.storage.k8s.io/standard created
++ print_success
++ [[ all != \k\u\b\e\l\e\t\o\n\l\y ]]
++ [[ true = false ]]
++ echo 'Local Kubernetes cluster is running.'
+Local Kubernetes cluster is running.
++ cat
+
+Logs:
+  /home/ubuntu/workspace/logs/kubernetes/kube-apiserver.log
+  /home/ubuntu/workspace/logs/kubernetes/kube-controller-manager.log
+  /home/ubuntu/workspace/logs/kubernetes/cloud-controller-manager.log
+  /home/ubuntu/workspace/logs/kubernetes/kube-proxy.log
+  /home/ubuntu/workspace/logs/kubernetes/kube-scheduler.log
++ [[ false = true ]]
++ [[ all == \a\l\l ]]
++ echo '  /home/ubuntu/workspace/logs/kubernetes/kubelet.log'
+  /home/ubuntu/workspace/logs/kubernetes/kubelet.log
++ [[ all != \k\u\b\e\l\e\t\o\n\l\y ]]
++ echo
+
++ [[ true = false ]]
++ echo 'To start using your cluster, run:'
+To start using your cluster, run:
++ cat
+
+  export KUBECONFIG=/var/run/kubernetes/admin.kubeconfig
+  cluster/kubectl.sh
+
+Alternatively, you can write to the default kubeconfig:
+
+  export KUBERNETES_PROVIDER=local
+
+  cluster/kubectl.sh config set-cluster local --server=https://localhost:6443 --certificate-authority=/var/run/kubernetes/server-ca.crt
+  cluster/kubectl.sh config set-credentials myself --client-key=/var/run/kubernetes/client-admin.key --client-certificate=/var/run/kubernetes/client-admin.crt
+  cluster/kubectl.sh config set-context local --cluster=local --user=myself
+  cluster/kubectl.sh config use-context local
+  cluster/kubectl.sh
++ [[ true = false ]]
++ [[ '' == \t\r\u\e ]]
++ kube::util::cleanup-temp-dir
++ rm -rf /tmp/tmp.WSXyA4BhUe
++ popd
+~/src/k8s.io/cloud-provider-openstack
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh config set-cluster local --server=https://localhost:6443 --certificate-authority=/var/run/kubernetes/server-ca.crt
+Cluster "local" set.
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh config set-credentials myself --client-key=/var/run/kubernetes/client-admin.key --client-certificate=/var/run/kubernetes/client-admin.crt
+User "myself" set.
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh config set-context local --cluster=local --user=myself
+Context "local" created.
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh config use-context local
+Switched to context "local".
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create clusterrolebinding --user system:serviceaccount:kube-system:default kube-system-cluster-admin-1 --clusterrole cluster-admin
+clusterrolebinding.rbac.authorization.k8s.io/kube-system-cluster-admin-1 created
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create clusterrolebinding --user system:serviceaccount:kube-system:pvl-controller kube-system-cluster-admin-2 --clusterrole cluster-admin
+clusterrolebinding.rbac.authorization.k8s.io/kube-system-cluster-admin-2 created
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create clusterrolebinding --user system:serviceaccount:kube-system:cloud-node-controller kube-system-cluster-admin-3 --clusterrole cluster-admin
+clusterrolebinding.rbac.authorization.k8s.io/kube-system-cluster-admin-3 created
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create clusterrolebinding --user system:serviceaccount:kube-system:cloud-controller-manager kube-system-cluster-admin-4 --clusterrole cluster-admin
+clusterrolebinding.rbac.authorization.k8s.io/kube-system-cluster-admin-4 created
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create clusterrolebinding --user system:serviceaccount:kube-system:shared-informers kube-system-cluster-admin-5 --clusterrole cluster-admin
+clusterrolebinding.rbac.authorization.k8s.io/kube-system-cluster-admin-5 created
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create clusterrolebinding --user system:kube-controller-manager kube-system-cluster-admin-6 --clusterrole cluster-admin
+clusterrolebinding.rbac.authorization.k8s.io/kube-system-cluster-admin-6 created
++ for test_case in internal external
++ test_file=examples/loadbalancers/internal-http-nginx.yaml
++ service_name=internal-http-nginx-service
++ sed -i /loadbalancer.openstack.org/d examples/loadbalancers/internal-http-nginx.yaml
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create -f examples/loadbalancers/internal-http-nginx.yaml
+deployment.apps/internal-http-nginx-deployment created
+service/internal-http-nginx-service created
++ service_name=internal-http-nginx-service
++ timeout 600 bash -c '
+      while :
+      do
+          [[ -n $(sudo ${KUBECTL} describe service "$service_name" | awk "/LoadBalancer Ingress/ {print \$3}") ]] && break
+          sleep 1
+      done
+      '
+++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh describe service internal-http-nginx-service
+++ awk '/LoadBalancer Ingress/ {print $3}'
++ ingress_ip=10.145.81.182
++ curl --retry 5 --retry-max-time 30 http://10.145.81.182
++ grep 'Welcome to nginx'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   612  100   612    0     0   630k      0 --:--:-- --:--:-- --:--:--  597k
+<title>Welcome to nginx!</title>
+<h1>Welcome to nginx!</h1>
++ echo 'internal lb services launched sucessfully!'
+internal lb services launched sucessfully!
++ for test_case in internal external
++ test_file=examples/loadbalancers/external-http-nginx.yaml
++ service_name=external-http-nginx-service
++ sed -i /loadbalancer.openstack.org/d examples/loadbalancers/external-http-nginx.yaml
++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh create -f examples/loadbalancers/external-http-nginx.yaml
+deployment.apps/external-http-nginx-deployment created
+service/external-http-nginx-service created
++ service_name=external-http-nginx-service
++ timeout 600 bash -c '
+      while :
+      do
+          [[ -n $(sudo ${KUBECTL} describe service "$service_name" | awk "/LoadBalancer Ingress/ {print \$3}") ]] && break
+          sleep 1
+      done
+      '
+++ sudo /home/ubuntu/src/k8s.io/kubernetes/cluster/kubectl.sh describe service external-http-nginx-service
+++ awk '/LoadBalancer Ingress/ {print $3}'
++ ingress_ip=10.145.81.178
++ curl --retry 5 --retry-max-time 30 http://10.145.81.178
++ grep 'Welcome to nginx'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   612  100   612    0     0   543k      0 --:--:-- --:--:-- --:--:--  597k
+<title>Welcome to nginx!</title>
+<h1>Welcome to nginx!</h1>
++ echo 'external lb services launched sucessfully!'
+external lb services launched sucessfully!
+ubuntu@default:~$
