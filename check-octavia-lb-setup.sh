@@ -164,3 +164,15 @@ do
       exit 1
   fi
 done
+
+# Clean up all the things
+pushd ${K8S_OS_PROVIDER_SRC_DIR}
+sudo ${KUBECTL} config use-context local
+ext_lb_svc_uid=$(sudo ${KUBECTL} get services external-http-nginx-service -o=jsonpath='{.metadata.uid}') || true
+int_lb_svc_uid=$(sudo ${KUBECTL} get services internal-http-nginx-service -o=jsonpath='{.metadata.uid}') || true
+sudo ${KUBECTL} delete -f examples/loadbalancers/internal-http-nginx.yaml || true
+sudo ${KUBECTL} delete -f examples/loadbalancers/external-http-nginx.yaml || true
+for lb_svc_uid in $ext_lb_svc_uid $int_lb_svc_uid; do
+    lb_name=$(echo $lb_svc_uid | tr -d '-' | sed 's/^/a/' | cut -c -32)
+    openstack loadbalancer delete --cascade $lb_name || true
+popd
