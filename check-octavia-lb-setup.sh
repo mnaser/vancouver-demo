@@ -90,6 +90,7 @@ install_openstack_provider() {
 	K8S_OS_PROVIDER_BRANCH=$1
 	K8S_OS_PROVIDER_TARBALL=${K8S_OS_PROVIDER_BRANCH}.tar.gz
 	K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
+	K8S_OS_PROVIDER_BIN=$K8S_OS_PROVIDER_SRC_DIR/openstack-cloud-controller-manager
 
 	mkdir -p ${K8S_OS_PROVIDER_SRC_DIR}
 	if [ ! -f $K8S_OS_PROVIDER_TARBALL ]; then
@@ -98,7 +99,9 @@ install_openstack_provider() {
 	fi
 
 	cd ${K8S_OS_PROVIDER_SRC_DIR}
-	make build
+	if [ ! -f $K8S_OS_PROVIDER_BIN ]; then
+		make build
+	fi
 }
 
 # Sanity checks
@@ -140,7 +143,7 @@ export EXTERNAL_CLOUD_PROVIDER=true
 # DO NOT change the location of the cloud-config file. It is important for the old cinder provider to work
 export CLOUD_CONFIG=/etc/kubernetes/cloud-config
 # Specify the OCCM binary
-export EXTERNAL_CLOUD_PROVIDER_BINARY="$PWD/openstack-cloud-controller-manager"
+export EXTERNAL_CLOUD_PROVIDER_BINARY="$K8S_OS_PROVIDER_SRC_DIR/openstack-cloud-controller-manager"
 # location of where the kubernetes processes log their output
 sudo mkdir -p ${K8S_LOG_DIR}
 export LOG_DIR=${K8S_LOG_DIR}
@@ -168,6 +171,7 @@ sudo ${KUBECTL} create clusterrolebinding --user system:serviceaccount:kube-syst
 sudo ${KUBECTL} create clusterrolebinding --user system:serviceaccount:kube-system:shared-informers kube-system-cluster-admin-5 --clusterrole cluster-admin
 sudo ${KUBECTL} create clusterrolebinding --user system:kube-controller-manager  kube-system-cluster-admin-6 --clusterrole cluster-admin
 # Run test
+pushd $K8S_OS_PROVIDER_SRC_DIR
 for test_case in internal external
 do
   test_file="examples/loadbalancers/${test_case}-http-nginx.yaml"
@@ -209,4 +213,5 @@ sudo ${KUBECTL} delete -f examples/loadbalancers/external-http-nginx.yaml || tru
 for lb_svc_uid in $ext_lb_svc_uid $int_lb_svc_uid; do
     lb_name=$(echo $lb_svc_uid | tr -d '-' | sed 's/^/a/' | cut -c -32)
     openstack loadbalancer delete --cascade $lb_name || true
+done
 popd
