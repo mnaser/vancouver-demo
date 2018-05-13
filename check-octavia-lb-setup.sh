@@ -8,8 +8,11 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+# tell etcd things are going to be ok.
+echo 'ETCD_UNSUPPORTED_ARCH=arm64' | sudo tee /etc/default/etcd
+
 # install go & docker
-sudo apt -y install golang-go docker.io
+sudo apt -y install docker.io etcd golang-go
 
 # set environment
 export GOPATH=$HOME
@@ -31,11 +34,6 @@ sudo apt install -y python-pip
 
 # install openstack clients
 sudo pip install -U python-openstackclient python-octaviaclient python-neutronclient
-
-# install etcd
-wget https://github.com/coreos/etcd/releases/download/v3.3.0/etcd-v3.3.0-linux-amd64.tar.gz
-tar x -f etcd-v3.3.0-linux-amd64.tar.gz
-sudo cp etcd-v3.3.0-linux-amd64/etcd{,ctl} /usr/local/bin/
 
 # setup k8s
 export K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
