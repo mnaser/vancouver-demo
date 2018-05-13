@@ -29,12 +29,6 @@ sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
 
-# install pip
-sudo apt install -y python-pip
-
-# install openstack clients
-sudo pip install -U python-openstackclient python-octaviaclient python-neutronclient
-
 # setup k8s
 export K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
 export K8S_SRC_DIR=$HOME/src/k8s.io/kubernetes
@@ -160,6 +154,8 @@ do
 done
 
 # Clean up all the things
+sudo apt install -y python-pip
+sudo pip install -U python-openstackclient python-octaviaclient python-neutronclient
 pushd ${K8S_OS_PROVIDER_SRC_DIR}
 sudo ${KUBECTL} config use-context local
 ext_lb_svc_uid=$(sudo ${KUBECTL} get services external-http-nginx-service -o=jsonpath='{.metadata.uid}') || true
