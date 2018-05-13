@@ -38,7 +38,7 @@ export K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
 export K8S_SRC_DIR=$HOME/src/k8s.io/kubernetes
 export K8S_LOG_DIR=$HOME/workspace/logs/kubernetes
 export KUBECTL=$HOME/src/k8s.io/kubernetes/cluster/kubectl.sh
-git clone https://github.com/kubernetes/kubernetes ${K8S_SRC_DIR} -b master
+git clone --depth 1 https://github.com/kubernetes/kubernetes ${K8S_SRC_DIR}
 make -C ${K8S_SRC_DIR} WHAT="cmd/kubectl cmd/hyperkube"
 
 # setup openstack environment vars
