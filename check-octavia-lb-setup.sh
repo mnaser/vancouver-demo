@@ -12,7 +12,7 @@ sudo apt autoremove -y
 echo 'ETCD_UNSUPPORTED_ARCH=arm64' | sudo tee /etc/default/etcd
 
 # install go & docker
-sudo apt -y install docker.io etcd golang-go
+sudo apt -y install docker.io etcd golang-go jq
 
 # set environment
 export GOPATH=$HOME
@@ -109,7 +109,7 @@ export LOG_DIR=${K8S_LOG_DIR}
 export ALLOW_PRIVILEGED=true
 # Just kick off all the processes and drop down to the command line
 export ENABLE_DAEMON=true
-export HOSTNAME_OVERRIDE=$(curl http://169.254.169.254/openstack/latest/meta_data.json | python -c "import sys, json; print json.load(sys.stdin)['name']")
+export HOSTNAME_OVERRIDE=$(curl http://169.254.169.254/openstack/latest/meta_data.json | jq -r .name)
 export MAX_TIME_FOR_URL_API_SERVER=5
 # -E preserves the current env vars, but we need to special case PATH
 # Must run local-up-cluster.sh under kubernetes root directory
