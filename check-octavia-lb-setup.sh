@@ -3,45 +3,102 @@
 set -x
 set -e
 
-# update apt cache, upgrade packages, remove unnecessary packages
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
-
-# install go
-wget -nc https://dl.google.com/go/go1.10.2.linux-$(dpkg --print-architecture).tar.gz
-sudo tar x -f go1.10.2.linux-$(dpkg --print-architecture).tar.gz -C /usr/local
-
-# install docker & co
-sudo apt -y install docker.io jq
-
 # set environment
 export GOPATH=$HOME
 export PATH="/usr/local/go/bin:$HOME/bin:$PATH"
 
-# stop firewall and allow all traffic
-sudo iptables -F
-sudo iptables -X
-sudo iptables -t nat -F
-sudo iptables -t nat -X
-sudo iptables -t mangle -F
-sudo iptables -t mangle -X
-sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -P OUTPUT ACCEPT
+install_apt() {
+	sudo apt update
+	sudo apt -y install "$@"
+}
 
-# install etcd
-wget https://github.com/coreos/etcd/releases/download/v3.3.0/etcd-v3.3.0-linux-$(dpkg --print-architecture).tar.gz
-tar x -f etcd-v3.3.0-linux-$(dpkg --print-architecture).tar.gz
-sudo cp etcd-v3.3.0-linux-$(dpkg --print-architecture)/etcd{,ctl} /usr/local/bin/
+install_go() {
+	GOLANG_VERSION=$1
+	GOLANG_TARBALL=go${GOLANG_VERSION}.linux-$(dpkg --print-architecture).tar.gz
+
+	if ! type go; then
+		wget https://dl.google.com/go/${GOLANG_TARBALL}
+		sudo tar -xf ${GOLANG_TARBALL} -C /usr/local
+	fi
+}
+
+install_etcd() {
+	ETCD_VERSION=v$1
+	ETCD_TARBALL=etcd-${ETCD_VERSION}-linux-$(dpkg --print-architecture).tar.gz
+
+	if ! type etcd; then
+		wget https://github.com/coreos/etcd/releases/download/${ETCD_VERSION}/${ETCD_TARBALL}
+		tar -xf ${ETCD_TARBALL}
+		sudo cp -r etcd*/etcd{,ctl} /usr/local/bin
+	fi
+}
+
+clear_iptables() {
+	sudo iptables -F
+	sudo iptables -X
+	sudo iptables -t nat -F
+	sudo iptables -t nat -X
+	sudo iptables -t mangle -F
+	sudo iptables -t mangle -X
+	sudo iptables -P INPUT ACCEPT
+	sudo iptables -P FORWARD ACCEPT
+	sudo iptables -P OUTPUT ACCEPT
+}
+
+install_k8s() {
+	K8S_VERSION=v$1
+	K8S_TARBALL=${K8S_VERSION}.tar.gz
+	K8S_SRC_DIR=$HOME/src/k8s.io/kubernetes
+	K8S_BIN_DIR=$K8S_SRC_DIR/_output/local/bin/linux/$(dpkg --print-architecture)
+
+	mkdir -p ${K8S_SRC_DIR}
+	if [ ! -f $K8S_TARBALL ]; then
+		wget https://github.com/kubernetes/kubernetes/archive/${K8S_TARBALL}
+		tar -xf ${K8S_TARBALL} --strip 1 -C ${K8S_SRC_DIR}
+	fi
+
+	mkdir -p ${K8S_BIN_DIR}
+	for i in `echo kubectl hyperkube`; do
+		BIN_PATH="${K8S_BIN_DIR}/${i}"
+		if [ ! -f $BIN_PATH ]; then
+			wget https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/$(dpkg --print-architecture)/$i -O $BIN_PATH;
+			chmod +x $BIN_PATH;
+		fi
+	done;
+}
+
+install_openstack_provider() {
+	K8S_OS_PROVIDER_BRANCH=$1
+	K8S_OS_PROVIDER_TARBALL=${K8S_OS_PROVIDER_BRANCH}.tar.gz
+	K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
+
+	mkdir -p ${K8S_OS_PROVIDER_SRC_DIR}
+	if [ ! -f $K8S_OS_PROVIDER_TARBALL ]; then
+		wget https://github.com/kubernetes/cloud-provider-openstack/archive/${K8S_OS_PROVIDER_TARBALL}
+		tar -xf ${K8S_OS_PROVIDER_TARBALL} --strip 1 -C ${K8S_OS_PROVIDER_SRC_DIR}
+	fi
+
+	cd ${K8S_OS_PROVIDER_SRC_DIR}
+	make build
+}
+
+install_apt docker.io go-dep golang-cfssl haveged jq mercurial &
+install_go 1.10.2 &
+install_etcd 3.3.0 &
+clear_iptables &
+install_k8s 1.10.2 &
+install_openstack_provider master &
+
+wait
 
 # setup k8s
+export K8S_VERSION=v1.10.2
 export K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
 export K8S_SRC_DIR=$HOME/src/k8s.io/kubernetes
 export K8S_LOG_DIR=$HOME/workspace/logs/kubernetes
-export KUBECTL=$HOME/src/k8s.io/kubernetes/cluster/kubectl.sh
-git clone --depth 1 https://github.com/kubernetes/kubernetes ${K8S_SRC_DIR}
-make -C ${K8S_SRC_DIR} WHAT="cmd/kubectl cmd/hyperkube"
+export K8S_BIN_DIR=$K8S_SRC_DIR/_output/local/bin/linux/$(dpkg --print-architecture)
+export KUBECTL=$K8S_SRC_DIR/_output/local/bin/linux/$(dpkg --print-architecture)/kubectl
+
 
 # setup openstack environment vars
 export OS_AUTH_TYPE=password
@@ -57,13 +114,6 @@ export OS_USERNAME=cpopenstack
 export OS_PASSWORD=cpopenstack
 export OS_REGION_NAME=RegionOne
 export OS_DOMAIN_NAME=default
-
-# get cloud-provider-openstack
-git clone https://github.com/kubernetes/cloud-provider-openstack ${K8S_OS_PROVIDER_SRC_DIR} -b master
-
-# build provider binaries
-cd ${K8S_OS_PROVIDER_SRC_DIR}
-make build
 
 # create cloud-config
 sudo mkdir -p /etc/kubernetes/
@@ -86,6 +136,7 @@ EOF
 sudo mv $HOME/cloud-config /etc/kubernetes/cloud-config
 
 # create environment variables
+export ETCD_UNSUPPORTED_ARCH=arm64
 export API_HOST_IP=$(ip route get 1.1.1.1 | awk '{print $7}')
 export KUBELET_HOST="0.0.0.0"
 export ALLOW_SECURITY_CONTEXT=true
