@@ -154,8 +154,7 @@ do
 done
 
 # Clean up all the things
-sudo apt install -y python-pip
-sudo pip install -U python-openstackclient python-octaviaclient python-neutronclient
+sudo apt -y install python-openstackclient python-octaviaclient
 pushd ${K8S_OS_PROVIDER_SRC_DIR}
 sudo ${KUBECTL} config use-context local
 ext_lb_svc_uid=$(sudo ${KUBECTL} get services external-http-nginx-service -o=jsonpath='{.metadata.uid}') || true
