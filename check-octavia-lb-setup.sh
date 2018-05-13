@@ -65,6 +65,25 @@ install_k8s() {
 			chmod +x $BIN_PATH;
 		fi
 	done;
+
+	sudo mkdir -p /etc/kubernetes/
+	cat <<EOF > $HOME/cloud-config
+[Global]
+domain-name = $OS_USER_DOMAIN_NAME
+tenant-id = $OS_PROJECT_ID
+auth-url = $OS_AUTH_URL
+password = $OS_PASSWORD
+username = $OS_USERNAME
+region = $OS_REGION_NAME
+[LoadBalancer]
+use-octavia = true
+floating-network-id = $(openstack network list --external -f value -c ID | head -n 1)
+subnet-id = $(openstack network list --internal -f value -c Subnets | head -n 1)
+[BlockStorage]
+bs-version = v2
+ignore-volume-az = yes
+EOF
+	sudo mv $HOME/cloud-config /etc/kubernetes/cloud-config
 }
 
 install_openstack_provider() {
@@ -82,6 +101,12 @@ install_openstack_provider() {
 	make build
 }
 
+# Sanity checks
+if [ -z $OS_AUTH_URL ]; then
+	echo "OpenStack environment variables missing"
+	exit 1
+fi
+
 install_apt docker.io go-dep golang-cfssl haveged jq mercurial &
 install_go 1.10.2 &
 install_etcd 3.3.0 &
@@ -92,48 +117,11 @@ install_openstack_provider master &
 wait
 
 # setup k8s
-export K8S_VERSION=v1.10.2
 export K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
 export K8S_SRC_DIR=$HOME/src/k8s.io/kubernetes
 export K8S_LOG_DIR=$HOME/workspace/logs/kubernetes
 export K8S_BIN_DIR=$K8S_SRC_DIR/_output/local/bin/linux/$(dpkg --print-architecture)
 export KUBECTL=$K8S_SRC_DIR/_output/local/bin/linux/$(dpkg --print-architecture)/kubectl
-
-
-# setup openstack environment vars
-export OS_AUTH_TYPE=password
-export OS_IDENTITY_API_VERSION=3
-export OS_VOLUME_API_VERSION=2
-export OS_INTERFACE=public
-export OS_AUTH_URL="http://10.145.81.106:5000/v3"
-export OS_PROJECT_ID=3434ba15b6b44896a4f57dcff4b12588
-export OS_PROJECT_NAME=cpopenstack
-export OS_USER_DOMAIN_NAME=Default
-export OS_PROJECT_DOMAIN_ID=default
-export OS_USERNAME=cpopenstack
-export OS_PASSWORD=cpopenstack
-export OS_REGION_NAME=RegionOne
-export OS_DOMAIN_NAME=default
-
-# create cloud-config
-sudo mkdir -p /etc/kubernetes/
-cat << EOF >> $HOME/cloud-config
-[Global]
-domain-name = $OS_USER_DOMAIN_NAME
-tenant-id = $OS_PROJECT_ID
-auth-url = $OS_AUTH_URL
-password = $OS_PASSWORD
-username = $OS_USERNAME
-region = $OS_REGION_NAME
-[LoadBalancer]
-use-octavia = true
-floating-network-id = $(openstack network list --external -f value -c ID | head -n 1)
-subnet-id = $(openstack network list --internal -f value -c Subnets | head -n 1)
-[BlockStorage]
-bs-version = v2
-ignore-volume-az = yes
-EOF
-sudo mv $HOME/cloud-config /etc/kubernetes/cloud-config
 
 # create environment variables
 export ETCD_UNSUPPORTED_ARCH=arm64
