@@ -12,11 +12,8 @@ sudo apt autoremove -y
 wget -nc https://dl.google.com/go/go1.10.2.linux-$(dpkg --print-architecture).tar.gz
 sudo tar x -f go1.10.2.linux-$(dpkg --print-architecture).tar.gz -C /usr/local
 
-# tell etcd things are going to be ok.
-echo 'ETCD_UNSUPPORTED_ARCH=arm64' | sudo tee /etc/default/etcd
-
 # install docker & co
-sudo apt -y install docker.io etcd jq
+sudo apt -y install docker.io jq
 
 # set environment
 export GOPATH=$HOME
@@ -32,6 +29,11 @@ sudo iptables -t mangle -X
 sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
+
+# install etcd
+wget https://github.com/coreos/etcd/releases/download/v3.3.0/etcd-v3.3.0-linux-$(dpkg --print-architecture).tar.gz
+tar x -f etcd-v3.3.0-linux-$(dpkg --print-architecture).tar.gz
+sudo cp etcd-v3.3.0-linux-$(dpkg --print-architecture)/etcd{,ctl} /usr/local/bin/
 
 # setup k8s
 export K8S_OS_PROVIDER_SRC_DIR=$HOME/src/k8s.io/cloud-provider-openstack
