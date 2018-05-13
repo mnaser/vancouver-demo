@@ -8,8 +8,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-# install go
-sudo apt install golang-go
+# install go & docker
+sudo apt -y install golang-go docker.io
 
 # set environment
 export GOPATH=$HOME
@@ -25,9 +25,6 @@ sudo iptables -t mangle -X
 sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
-
-# install docker
-sudo apt install -y docker.io
 
 # install pip
 sudo apt install -y python-pip
