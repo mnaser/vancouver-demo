@@ -9,8 +9,7 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 # install go
-wget https://storage.googleapis.com/golang/go1.10.2.linux-amd64.tar.gz
-sudo tar x -f go1.10.2.linux-amd64.tar.gz -C /usr/local
+sudo apt install golang-go
 
 # set environment
 export GOPATH=$HOME
