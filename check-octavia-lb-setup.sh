@@ -9,8 +9,8 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 # install go
-wget https://storage.googleapis.com/golang/go1.10.2.linux-amd64.tar.gz
-sudo tar x -f go1.10.2.linux-amd64.tar.gz -C /usr/local
+wget https://dl.google.com/go/go1.10.2.linux-$(dpkg --print-architecture).tar.gz
+sudo tar x -f go1.10.2.linux-$(dpkg --print-architecture).tar.gz -C /usr/local
 
 # tell etcd things are going to be ok.
 echo 'ETCD_UNSUPPORTED_ARCH=arm64' | sudo tee /etc/default/etcd
